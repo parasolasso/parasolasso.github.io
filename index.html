@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOUT LE MONDE DÉTESTE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f5;
+      --gray: #999;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+      position: relative;
+    }
+
+    .site-status {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .site-status::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff5f00;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+
+    /* BOUTONS */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--white);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      border-radius: 2px;
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .btn-epk {
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .btn-epk:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 48px auto 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .legal {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      line-height: 2;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .legal strong {
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+    }
+
+    .legal a {
+      color: var(--gray);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(153,153,153,0.3);
+      transition: color 0.2s;
+    }
+
+    .legal a:hover {
+      color: var(--white);
+    }
+
+    /* MODAL MENTIONS LÉGALES */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px;
+      max-width: 540px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .modal p {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--gray);
+      font-size: 20px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover { color: var(--white); }
+
+    @media (max-width: 480px) {
+      .modal { padding: 32px 24px; }
+      h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="site-status">Site en construction</p>
+
+    <h1>Tout le monde<br>déteste .</h1>
+    <p class="subtitle">— TLMD.FR —</p>
+
+    <div class="buttons">
+        <a class="btn" href="https://on.soundcloud.com/6pLbjwR1PTnxAZfL3F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.175 12.225c-.015 0-.023.01-.023.025l-.323 2.017.323 1.987c0 .013.008.022.023.022.013 0 .02-.009.02-.022L1.49 14.267l-.295-2.017c0-.015-.007-.025-.02-.025zm1.658-.89c-.02 0-.033.012-.033.03L2.49 14.267l.31 1.882c0 .018.014.03.033.03s.033-.012.033-.03l.351-1.882-.351-2.902c0-.018-.014-.03-.033-.03zm1.698-.163c-.023 0-.04.017-.04.04l-.299 3.055.299 1.864c0 .022.017.04.04.04s.04-.017.04-.04l.34-1.864-.34-3.055c0-.022-.017-.04-.04-.04zm1.71-.193c-.028 0-.05.021-.05.05l-.282 3.248.282 1.844c0 .027.022.05.05.05s.05-.022.05-.05l.32-1.844-.32-3.248c0-.028-.022-.05-.05-.05zm1.72-.118c-.031 0-.056.025-.056.057l-.267 3.366.267 1.824c0 .031.025.057.056.057s.057-.025.057-.057l.302-1.824-.302-3.366c0-.031-.025-.057-.057-.057zm1.73-.05c-.036 0-.065.029-.065.065L9.36 14.267l.264 1.805c0 .036.029.065.065.065s.065-.029.065-.065l.299-1.805-.299-3.441c0-.036-.029-.065-.065-.065zm1.742-.022c-.04 0-.073.033-.073.073l-.252 3.464.252 1.786c0 .04.033.073.073.073s.073-.033.073-.073l.285-1.786-.285-3.464c0-.04-.033-.073-.073-.073zm3.758 1.707c-.134 0-.262.02-.384.055-.077-2.105-1.793-3.793-3.914-3.793-.472 0-.924.085-1.34.24-.149.056-.189.113-.19.163v7.474c.001.052.041.095.093.1h5.735c.5 0 .905-.404.905-.905v-.529c0-.5-.405-.905-.905-.905zm4.067-1.22c-.193 0-.376.037-.544.103-.113-2.663-2.286-4.793-4.973-4.793-.613 0-1.2.115-1.74.32-.203.076-.257.155-.258.225v9.512c.001.07.055.128.126.133h7.389c.634 0 1.148-.513 1.148-1.148v-2.204c0-1.235-1.001-2.148-2.148-2.148z"/>
+          </svg>
+          SoundCloud
+        </a>
+
+      <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        Instagram
+      </a>
+
+
+      <a class="btn" href="https://drive.google.com/file/d/1-lSeBXQOhORbO7izykNqu1bAXUc_06kj/view?usp=drive_link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        EPK
+      </a>
+
+      <button class="btn btn-epk" onclick="document.getElementById('contact-modal').classList.add('open')">
+        Contact
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+          <path d="M22 4l-10 8-10-8"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <div class="divider"></div>
+  </header>
+
+  <footer>
+    <p class="legal">
+      <strong>Mentions légales</strong><br>
+      Direction de publication : Parasol Association, Paris 17<br>
+      Hébergeur : GitHub, Inc.<br>
+      Toute reproduction, même partielle, est interdite sans autorisation préalable.<br>
+      <a href="#" onclick="document.getElementById('legal-modal').classList.add('open'); return false;">Voir les mentions légales complètes</a>
+    </p>
+  </footer>
+
+  <!-- MODAL EPK -->
+  <div class="modal-overlay" id="epk-modal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('epk-modal').classList.remove('open')">×</button>
+      <h2>EPK — Electronic Press Kit</h2>
+      <p>Le dossier de presse sera disponible prochainement.</p>
+      <p>Pour toute demande professionnelle (booking, presse, facture), contactez :<br>
+      <a href="mailto:contact@tlmd.fr" style="color:rgba(255,255,255,0.5);">contact@tlmd.fr</a></p>
+    </div>
+  </div>
+
+  <!-- MODAL CONTACT -->
+  <div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('contact-modal').classList.remove('open')">×</button>
+      <h2>CONTACT</h2>
+      <p>Pour toute demande professionnelle (booking, presse, facture), contactez :<br>
+      <a href="mailto:contact@tlmd.fr" style="color:rgba(255,255,255,0.5);">contact@tlmd.fr</a></p>
+    </div>
+  </div>
+
+  <!-- MODAL MENTIONS LÉGALES -->
+  <div class="modal-overlay" id="legal-modal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('legal-modal').classList.remove('open')">×</button>
+      <h2>Mentions légales</h2>
+      <p><strong style="color:rgba(255,255,255,0.4)">Éditeur du site</strong><br>
+      Parasol Association<br>
+      Paris 17<br>
+      Contact : parasol.wav@gmail.com</p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Hébergeur</strong><br>
+      GitHub, Inc.<br>
+      88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
+      <a href="https://github.com" target="_blank">github.com</a></p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Propriété intellectuelle</strong><br>
+      L'ensemble des contenus présents sur ce site (textes, visuels, sons) est protégé par le droit d'auteur. Toute reproduction sans autorisation est strictement interdite.</p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Données personnelles</strong><br>
+      Ce site ne collecte aucune donnée personnelle.</p>
+    </div>
+  </div>
+
+</body>
+</html>
