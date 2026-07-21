@@ -162,7 +162,7 @@
       color: var(--white);
     }
 
-    /* MODAL MENTIONS LÉGALES / EPK / CONTACT */
+    /* MODAL MENTIONS LÉGALES / CONTACT */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -273,17 +273,12 @@
     <p class="section">NOUS PROGRAMMER.</p>
     <div class="buttons">
       <a class="btn" href="https://drive.google.com/file/d/1-lSeBXQOhORbO7izykNqu1bAXUc_06kj/view?usp=drive_link" target="_blank" rel="noopener" data-goatcounter-click="epk" data-goatcounter-title="EPK">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-        </svg>
+        <img src="https://api.iconify.design/mdi/folder-download-outline.svg?color=%23f5f5f5" alt="">
         EPK
       </a>
 
       <button class="btn btn-epk" onclick="document.getElementById('contact-modal').classList.add('open')" data-goatcounter-click="contact-open" data-goatcounter-title="Contact">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
-          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
-          <path d="M22 4l-10 8-10-8"/>
-        </svg>
+        <img src="https://api.iconify.design/mdi/email-outline.svg?color=%23f5f5f5" alt="">
         Contact
       </button>
     </div>
@@ -300,17 +295,6 @@
       <a href="#" onclick="document.getElementById('legal-modal').classList.add('open'); return false;">Voir les mentions légales complètes</a>
     </p>
   </footer>
-
-  <!-- MODAL EPK -->
-  <div class="modal-overlay" id="epk-modal" onclick="if(event.target===this)this.classList.remove('open')">
-    <div class="modal">
-      <button class="modal-close" onclick="document.getElementById('epk-modal').classList.remove('open')">×</button>
-      <h2>EPK — Electronic Press Kit</h2>
-      <p>Le dossier de presse sera disponible prochainement.</p>
-      <p>Pour toute demande professionnelle (booking, presse, facture), contactez :<br>
-      <a href="mailto:contact@tlmd.fr" style="color:rgba(255,255,255,0.5);">contact@tlmd.fr</a></p>
-    </div>
-  </div>
 
   <!-- MODAL CONTACT -->
   <div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)this.classList.remove('open')">
