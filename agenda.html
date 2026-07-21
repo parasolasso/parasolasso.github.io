@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda — TOUT LE MONDE DÉTESTE</title>
+    <link rel="icon" type="image/svg+xml" href="images/tlmd_LOGO_sqr.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+  <div class="site-nav">
+  <!-- HEADER NAVIGATION -- logo cliquable vers l'accueil, à garder identique sur toutes les pages secondaires -->
+    <a href="index.html">
+      <img src="images/Logo_short_white.svg" alt="TLMD — Retour à l'accueil">
+    </a>
+  </div>
+
+  <main>
+    <p class="page-title">Agenda</p>
+    <div class="agenda-list" id="agenda-list"></div>
+  </main>
+
+  <div id="site-footer"></div>
+
+
+  <!-- SCRIPTS — toujours en fin de body -->
+  <script src="js/actu.js"></script>
+  <script>renderAgenda();</script>
+  
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  
+  <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

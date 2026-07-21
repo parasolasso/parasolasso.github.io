@@ -19,47 +19,56 @@
     <p class="section">ÉCOUTER EN STREAMING.</p>
     <div class="buttons">
       <a class="btn" href="https://soundcloud.com/toutlemondedeteste" target="_blank" rel="noopener" data-goatcounter-click="soundcloud" data-goatcounter-title="SoundCloud">
-        <img src="https://cdn.simpleicons.org/soundcloud/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/soundcloud/FF5500" alt="">
         SoundCloud
       </a>
 
       <a class="btn" href="https://spotify.com" target="_blank" rel="noopener" data-goatcounter-click="spotify" data-goatcounter-title="Spotify">
-        <img src="https://cdn.simpleicons.org/spotify/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
         Spotify
       </a>
 
       <a class="btn" href="https://deezer.com" target="_blank" rel="noopener" data-goatcounter-click="deezer" data-goatcounter-title="Deezer">
-        <img src="https://cdn.simpleicons.org/deezer/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/deezer/A238FF" alt="">
         Deezer
       </a>
 
       <a class="btn" href="https://music.apple.com/" target="_blank" rel="noopener" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music">
-        <img src="https://cdn.simpleicons.org/applemusic/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="">
         Apple Music
       </a>
     </div>
 
-    <p class="section">ACTUALITÉS.</p>
+    <p class="section">ACTUALITÉS. 
+      <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">
+      <img src="https://api.iconify.design/mdi/feather.svg?color=%23f5f5f5" alt="" style="width:16px;height:16px;vertical-align:-2px;margin-right:8px;">
+      Toutes les actus
+      </a></p>
     <div class="news-summary" id="news-summary"></div>
-    <div class="buttons">
-      <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">Voir plus</a>
-    </div>
+    <a class="carousel-indicator" id="news-indicator"></a>
+    <!-- <div class="buttons">
+      <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">Toutes les actus</a>
+    </div> -->
 
     <p class="section">RÉSEAUX SOCIAUX.</p>
     <div class="buttons">
       <a class="btn" href="https://www.instagram.com/tlmd.fr/" target="_blank" rel="noopener" data-goatcounter-click="instagram" data-goatcounter-title="Instagram">
-        <img src="https://cdn.simpleicons.org/instagram/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="">
         Instagram
       </a>
 
       <a class="btn" href="https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" target="_blank" rel="noopener" data-goatcounter-click="facebook" data-goatcounter-title="Facebook">
-        <img src="https://cdn.simpleicons.org/facebook/f5f5f5" alt="">
+        <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="">
         Facebook
       </a>
     </div>
 
     <p class="section">PROGRAMME ET BILLETTERIE.</p>
     <div class="buttons">
+      <a class="btn" href="agenda.html" target="_blank" rel="noopener" data-goatcounter-click="agenda" data-goatcounter-title="Agenda">
+        <img src="https://api.iconify.design/mdi/calendar-month-outline.svg?color=%23f5f5f5" alt="">
+        Évènement
+      </a>
       <a class="btn" href="https://shotgun.live" target="_blank" rel="noopener" data-goatcounter-click="billetterie" data-goatcounter-title="Billetterie">
         <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
         Billetterie
@@ -96,6 +105,7 @@
 
   <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
   <script src="js/actu.js"></script>
+  <script>renderHomeSummary();</script>
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
   

@@ -31,8 +31,9 @@ body {
 /* SECTION ACTUALITÉ (page d'accueil) */
 .news-summary {
   max-width: 480px;
-  margin: 0 auto 28px;
+  margin: 0 auto 0;
   text-align: center;
+  transition: opacity 1s ease;
 }
 
 .news-summary h3 {
@@ -490,4 +491,34 @@ footer {
     width: 100%;
     justify-content: center;
   }
+}
+
+
+.news-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.carousel-arrow:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.carousel-indicator {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+  text-transform: uppercase;
+
+}
+
+.btn-small {
+  padding: 8px 18px;
+  font-size: 9px;
+  margin-top: 14px;
 }
