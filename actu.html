@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actualités — TOUT LE MONDE DÉTESTE</title>
+    <link rel="icon" type="image/svg+xml" href="tlmd_LOGO_sqr.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER — logo cliquable vers l'accueil, à garder identique sur toutes les pages secondaires -->
+  <div class="site-nav">
+    <a href="index.html">
+      <img src="Logo_short_white.svg" alt="TLMD — Retour à l'accueil">
+    </a>
+  </div>
+
+  <main>
+    <p class="page-title">Actualités</p>
+
+    <!-- ARTICLE TYPE — dupliquer ce bloc <article> pour chaque nouvelle actu -->
+    <article class="article">
+      <img src="https://picsum.photos/1200/675?grayscale" alt="Photo de l'actualité">
+      <p class="article-date">21 juillet 2026</p>
+      <h2>Une nouvelle date vient d'être annoncée</h2>
+      <p>Texte de présentation de l'actualité. Ce paragraphe décrit l'événement, la date, le lieu ou toute information utile à annoncer aux visiteurs du site.</p>
+      <p>Un second paragraphe peut être ajouté pour détailler davantage — line-up, horaires, informations pratiques, lien de billetterie, etc.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p class="legal">
+      <strong>Mentions légales</strong><br>
+      Direction de publication : Parasol Association, Paris 17<br>
+      Hébergeur : GitHub, Inc.<br>
+      Toute reproduction, même partielle, est interdite sans autorisation préalable.<br>
+      <a href="#" onclick="document.getElementById('legal-modal').classList.add('open'); return false;">Voir les mentions légales complètes</a>
+    </p>
+  </footer>
+
+  <!-- MODAL MENTIONS LÉGALES -->
+  <div class="modal-overlay" id="legal-modal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('legal-modal').classList.remove('open')">×</button>
+      <h2>Mentions légales</h2>
+      <p><strong style="color:rgba(255,255,255,0.4)">Éditeur du site</strong><br>
+      Parasol Association<br>
+      Paris 17<br>
+      Contact : parasol.wav@gmail.com</p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Hébergeur</strong><br>
+      GitHub, Inc.<br>
+      88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
+      <a href="https://github.com" target="_blank">github.com</a></p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Propriété intellectuelle</strong><br>
+      L'ensemble des contenus présents sur ce site (textes, visuels, sons) est protégé par le droit d'auteur. Toute reproduction sans autorisation est strictement interdite.</p>
+      <p><strong style="color:rgba(255,255,255,0.4)">Données personnelles</strong><br>
+      Ce site ne collecte aucune donnée personnelle identifiante. Il utilise uniquement un outil de mesure d'audience (GoatCounter) destiné à comptabiliser de manière anonyme le nombre de visites et de clics sur les liens de la page, dans le seul but de comprendre la fréquentation du site.<br><br>
+      Cet outil ne dépose aucun cookie, ne collecte ni adresse IP ni identifiant permettant de suivre un visiteur individuellement, et ne transmet aucune donnée à des tiers à des fins publicitaires ou commerciales. Conformément à l'article 82 de la loi Informatique et Libertés, ce type de traceur, strictement limité à la mesure d'audience et ne produisant que des statistiques anonymes, est exempté de recueil du consentement préalable.</p>
+    </div>
+  </div>
+</body>
+</html>
