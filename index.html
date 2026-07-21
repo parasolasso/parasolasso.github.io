@@ -8,7 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>  
+  <div id="site-header"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        if (window.goatcounter) window.goatcounter.bind_events();
+      });
+  </script>
 
   <header>
     <img src="tlmd_LOGO_sqr.svg" alt="TLMD Logo" style="max-width: 350px; margin-bottom: 16px;">
@@ -37,7 +47,7 @@
       </a>
     </div>
 
-    <p class="section">ACTUALITÉ.</p>
+    <p class="section">ACTUALITÉS.</p>
     <div class="news-summary">
       <p class="article-date">21 juillet 2026</p>
       <h3>Une nouvelle date vient d'être annoncée</h3>
@@ -58,6 +68,19 @@
         <img src="https://cdn.simpleicons.org/facebook/f5f5f5" alt="">
         Facebook
       </a>
+    </div>
+    
+    <p class="section">PROGRAMME ET BILLETTERIE.</p>
+    <div class="buttons">
+      <a class="btn" href="#" target="_blank" rel="noopener" data-goatcounter-click="billetterie" data-goatcounter-title="Billetterie">
+    <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
+    Billetterie
+    </a>
+<!-- 
+      <a class="btn" href="https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" target="_blank" rel="noopener" data-goatcounter-click="facebook" data-goatcounter-title="Facebook">
+        <img src="https://cdn.simpleicons.org/facebook/f5f5f5" alt="">
+        Facebook
+      </a> -->
     </div>
 
     <p class="section">NOUS PROGRAMMER.</p>

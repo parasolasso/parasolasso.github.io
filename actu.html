@@ -10,12 +10,24 @@
 </head>
 <body>
 
-  <!-- HEADER — logo cliquable vers l'accueil, à garder identique sur toutes les pages secondaires -->
+  <!-- BANDEAU HEADER — à garder identique sur toutes les pages -->
+  <div id="site-header"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        if (window.goatcounter) window.goatcounter.bind_events();
+      });
+  </script>
+  
   <div class="site-nav">
+  <!-- HEADER NAVIGATION -- logo cliquable vers l'accueil, à garder identique sur toutes les pages secondaires -->
     <a href="index.html">
       <img src="Logo_short_white.svg" alt="TLMD — Retour à l'accueil">
     </a>
-  </div>
+    </div>
 
   <main>
     <p class="page-title">Actualités</p>

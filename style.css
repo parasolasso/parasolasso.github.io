@@ -7,6 +7,13 @@
   --border: rgba(255,255,255,0.1);
 }
 
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--black);
+}
+
 html, body {
   height: 100%;
   background: var(--black);
@@ -46,9 +53,10 @@ body {
 
 /* NAVIGATION SIMPLE (pages secondaires) */
 .site-nav {
-  padding: 32px 24px;
+  /* padding: 32px 24px; */
   text-align: center;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+  /* border-bottom: 1px solid var(--border); */
 }
 
 .site-nav a {
@@ -318,4 +326,68 @@ footer {
 @media (max-width: 480px) {
   .modal { padding: 32px 24px; }
   h1 { font-size: 2.8rem; }
+}
+
+/* BANDEAU BILLETTERIE */
+.ticket-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 8px;
+  text-align: center;
+  clip-path: inset(0 100% 0 0);
+  animation: unroll-banner 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.ticket-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.ticket-btn:hover {
+  opacity: 0.85;
+}
+
+.ticket-btn img {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.ticket-text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+@keyframes unroll-banner {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket-banner {
+    animation: none;
+    clip-path: none;
+  }
 }
