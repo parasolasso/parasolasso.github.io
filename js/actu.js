@@ -31,7 +31,9 @@ async function renderHomeSummary() {
       container.style.opacity = 1;
       if (window.goatcounter) window.goatcounter.bind_events();
     }, 2000);
-    if (indicator) indicator.textContent = `${i + 1} / ${items.length}`;
+    setTimeout(() => {
+      if (indicator) indicator.textContent = `${i + 1} / ${items.length}`;
+    }, 1000);
   }
 
   renderItem(current);
