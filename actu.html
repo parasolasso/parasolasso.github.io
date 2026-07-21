@@ -12,34 +12,17 @@
 
   <!-- BANDEAU HEADER — à garder identique sur toutes les pages -->
   <div id="site-header"></div>
-
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('site-header').innerHTML = html;
-        if (window.goatcounter) window.goatcounter.bind_events();
-      });
-  </script>
   
   <div class="site-nav">
   <!-- HEADER NAVIGATION -- logo cliquable vers l'accueil, à garder identique sur toutes les pages secondaires -->
     <a href="index.html">
       <img src="Logo_short_white.svg" alt="TLMD — Retour à l'accueil">
     </a>
-    </div>
-
+  </div>
   <main>
     <p class="page-title">Actualités</p>
 
-    <!-- ARTICLE TYPE — dupliquer ce bloc <article> pour chaque nouvelle actu -->
-    <article class="article">
-      <img src="https://picsum.photos/1200/675?grayscale" alt="Photo de l'actualité">
-      <p class="article-date">21 juillet 2026</p>
-      <h2>Une nouvelle date vient d'être annoncée</h2>
-      <p>Texte de présentation de l'actualité. Ce paragraphe décrit l'événement, la date, le lieu ou toute information utile à annoncer aux visiteurs du site.</p>
-      <p>Un second paragraphe peut être ajouté pour détailler davantage — line-up, horaires, informations pratiques, lien de billetterie, etc.</p>
-    </article>
+    <div id="actu-list"></div>
   </main>
 
   <footer>
@@ -72,5 +55,19 @@
       Cet outil ne dépose aucun cookie, ne collecte ni adresse IP ni identifiant permettant de suivre un visiteur individuellement, et ne transmet aucune donnée à des tiers à des fins publicitaires ou commerciales. Conformément à l'article 82 de la loi Informatique et Libertés, ce type de traceur, strictement limité à la mesure d'audience et ne produisant que des statistiques anonymes, est exempté de recueil du consentement préalable.</p>
     </div>
   </div>
+
+  <!-- SCRIPTS — toujours en fin de body -->
+  <script src="js/actu.js"></script>
+  <script>
+    renderActuList();
+
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        if (window.goatcounter) window.goatcounter.bind_events();
+      });
+  </script>
+  <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

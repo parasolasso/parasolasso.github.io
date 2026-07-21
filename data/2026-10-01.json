@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-01",
+  "day": "01",
+  "month": "Oct",
+  "title": "Une nouvelle date vient d'être annoncée",
+  "summary": "Résumé court pour la home et la liste d'actus.",
+  "text": [
+    "Premier paragraphe détaillé de l'actualité.",
+    "Second paragraphe si besoin."
+  ],
+  "image": "images/2026-10-01.jpg",
+  "isEvent": true,
+  "venue": "Lieu, Ville",
+  "ticketLink": "#"
+}

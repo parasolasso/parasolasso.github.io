@@ -8,17 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>  
-  <div id="site-header"></div>
+<body>
 
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('site-header').innerHTML = html;
-        if (window.goatcounter) window.goatcounter.bind_events();
-      });
-  </script>
+  <div id="site-header"></div>
 
   <header>
     <img src="tlmd_LOGO_sqr.svg" alt="TLMD Logo" style="max-width: 350px; margin-bottom: 16px;">
@@ -48,11 +40,7 @@
     </div>
 
     <p class="section">ACTUALITÉS.</p>
-    <div class="news-summary">
-      <p class="article-date">21 juillet 2026</p>
-      <h3>Une nouvelle date vient d'être annoncée</h3>
-      <p>Résumé court de la dernière actualité — une ou deux phrases donnant envie d'en savoir plus.</p>
-    </div>
+    <div class="news-summary" id="news-summary"></div>
     <div class="buttons">
       <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">Voir plus</a>
     </div>
@@ -69,18 +57,13 @@
         Facebook
       </a>
     </div>
-    
+
     <p class="section">PROGRAMME ET BILLETTERIE.</p>
     <div class="buttons">
       <a class="btn" href="https://shotgun.live" target="_blank" rel="noopener" data-goatcounter-click="billetterie" data-goatcounter-title="Billetterie">
-    <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
-    Billetterie
-    </a>
-<!-- 
-      <a class="btn" href="https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" target="_blank" rel="noopener" data-goatcounter-click="facebook" data-goatcounter-title="Facebook">
-        <img src="https://cdn.simpleicons.org/facebook/f5f5f5" alt="">
-        Facebook
-      </a> -->
+        <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
+        Billetterie
+      </a>
     </div>
 
     <p class="section">NOUS PROGRAMMER.</p>
@@ -140,6 +123,18 @@
     </div>
   </div>
 
+  <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
+  <script src="js/actu.js"></script>
+  <script>
+    renderHomeSummary();
+
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        if (window.goatcounter) window.goatcounter.bind_events();
+      });
+  </script>
   <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
