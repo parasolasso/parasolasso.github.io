@@ -21,7 +21,7 @@ async function renderHomeSummary() {
     container.style.opacity = 0;
     setTimeout(() => {
       container.innerHTML = `
-        <p class="article-date">${a.date}</p>
+        <p class="article-date">À ne pas manquer - ${a.date}</p>
         <h3>${a.title}</h3>
         <p>${a.summary}</p>
         <div class="buttons">
@@ -30,7 +30,7 @@ async function renderHomeSummary() {
       `;
       container.style.opacity = 1;
       if (window.goatcounter) window.goatcounter.bind_events();
-    }, 2000);
+    }, 1000);
     setTimeout(() => {
       if (indicator) indicator.textContent = `${i + 1} / ${items.length}`;
     }, 1000);
