@@ -539,3 +539,35 @@ footer {
   font-size: 9px;
   margin-top: 14px;
 }
+
+/* PAGE MENTIONS LÉGALES */
+.legal-page {
+  max-width: 640px;
+  margin: 0 auto 96px;
+  padding: 0 24px;
+  text-align: left;
+}
+
+.legal-page p {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.legal-page strong {
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+}
+
+.legal-page a {
+  color: var(--gray);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(153,153,153,0.3);
+  transition: color 0.2s;
+}
+
+.legal-page a:hover {
+  color: var(--white);
+}
