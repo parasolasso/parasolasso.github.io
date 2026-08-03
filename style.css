@@ -23,6 +23,7 @@
 .site-logo {
   position: absolute;
   left: 16px;
+  z-index: 110;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -30,12 +31,12 @@
 
 .site-logo img {
   width: auto;
-  height: 20px;
+  height: 24px;
   display: block;
 }
 
 #banner-container {
-  max-width: calc(100% - 160px);
+  max-width: calc(100% - 120px);
 }
 
 html, body {
@@ -82,6 +83,38 @@ body {
   font-weight: 300;
   line-height: 1.7;
   color: rgba(245,245,245,0.75);
+}
+
+.news-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.carousel-arrow:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.carousel-indicator {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.carousel-indicator:empty {
+  display: none;
+}
+
+.btn-small {
+  padding: 8px 18px;
+  font-size: 9px;
+  margin-top: 14px;
 }
 
 /* NAVIGATION SIMPLE (pages secondaires) */
@@ -507,37 +540,7 @@ footer {
   color: var(--black);
 }
 
-.news-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  max-width: 560px;
-  margin: 0 auto;
-}
 
-.carousel-arrow:hover {
-  background: var(--white);
-  color: var(--black);
-}
-
-.carousel-indicator {
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  color: var(--gray);
-  text-transform: uppercase;
-}
-
-.carousel-indicator:empty {
-  display: none;
-}
-
-.btn-small {
-  padding: 8px 18px;
-  font-size: 9px;
-  margin-top: 14px;
-}
 
 /* PAGE MENTIONS LÉGALES */
 .legal-page {
@@ -574,6 +577,7 @@ footer {
 /* PAGE 404 */
 .error-page {
   max-width: 480px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -716,4 +720,83 @@ footer {
     width: 100%;
     justify-content: center;
   }
+
+  .bio-image.bio-portrait {
+    max-width: 100%;
+  }
+
 }
+
+/* PAGE BIOGRAPHIE */
+.bio-section {
+  max-width: 720px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+  text-align: left;
+}
+ 
+.bio-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+ 
+.bio-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(245,245,245,0.82);
+  margin-bottom: 18px;
+}
+ 
+.bio-image {
+  margin: 24px 0;
+}
+ 
+.bio-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+ 
+/* Paysage et portrait isolé : image pleine largeur, légende en dessous */
+.bio-image.bio-landscape{
+  display: block;
+}
+
+.bio-image.bio-portrait {
+  display: block;
+  max-width: 320px;
+}
+ 
+/* Image portrait accolée au paragraphe qui la suit */
+.bio-portrait-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+ 
+.bio-portrait-row .bio-image {
+  width: 40%;
+  margin: 0;
+}
+ 
+.bio-portrait-row .bio-text {
+  flex: 1;
+  margin: 0;
+}
+ 
+.bio-caption {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+
+ 

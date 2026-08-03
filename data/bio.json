@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Le Projet",
+    "blocks": [
+      { "type": "text", "content": "TOUT LE MONDE DÉTESTE (TLMD.) est un groupe de rock alernatif, pop. On raconte les fables modernes d’une jeunesse à la fois politisée et consumériste, aussi ouverte à l’autre qu’enfermée dans ses propres stéréotypes." },
+      {
+        "type": "image",
+        "src": "images/DSC03711.jpg",
+        "alt": "Séance en studio"
+      },
+      { "type": "text", "content": "À travers des textes tour à tour poétiques ou crus, et ses passages instrumentaux, TLMD chante les relations, le travail, l’absurdité, les angoisses et les corps." }
+    ]
+  },
+  {
+    "title": "Le Groupe",
+    "blocks": [
+        {
+          "type": "image",
+          "src": "images/pierre.jpg",
+          "alt": "Pierre"
+        },
+        { "type": "text", "content": "Pierre • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations de la diversité des territoires qu'il parcours. Sur scène il est le bateur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
+        {
+          "type": "image",
+          "src": "images/tim.jpg",
+          "alt": "Timothée"
+        },
+        { "type": "text", "content": "Timothée •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
+        {
+            "type": "image",
+            "src": "images/arthus.jpg",
+            "alt": "Arthus"
+        },
+        { "type": "text", "content": "Arthus • Chanteur, Guitariste & Développeur, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poingnée de titre du groupe. " }
+    ]
+  },
+  {
+    "title": "Nouveau Départ",
+    "blocks": [
+      { "type": "text", "content": "Né d'une amitié de longue date, le projet auto-produit fait peau neuve en Avril 2026 en adoptant un nouveau nom. Initialement appelé PARASOL, le groupe assume son virage rock, professionnel et provocateur tout en conservant ses titres les plus ensoleillés et ses sonorités pop. Naissent ainsi une nouvelle charte graphique fait maison et un nouveau nom : <strong>TOUT LE MONDE DÉTESTE</strong> . (TLMD.)" },
+      { "type": "text", "content": "Le groupe multiplie les scènes et les collaborations, avec une identité visuelle et sonore de plus en plus affirmée." },
+      {
+        "type": "image",
+        "src": "images/2026-10-01.png",
+        "alt": "TLMD."
+      }
+    ]
+  } 
+]
