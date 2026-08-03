@@ -1,5 +1,5 @@
 async function loadActus() {
-  const index = await fetch('data/index.json').then(r => r.json());
+  const index = await fetch('data/index_actu.json').then(r => r.json());
   const actus = await Promise.all(
     index.map(file => fetch('data/' + file).then(r => r.json()))
   );

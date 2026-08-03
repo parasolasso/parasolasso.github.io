@@ -2,6 +2,7 @@ fetch('header.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('site-header').innerHTML = html;
+    renderMenu();
     renderBanner();
     if (window.goatcounter) window.goatcounter.bind_events();
   });
@@ -30,6 +31,46 @@ async function renderBanner() {
       <p class="ticket-text">${b.text}</p>
     </div>
   `;
+
+  if (window.goatcounter) window.goatcounter.bind_events();
+}
+
+async function renderMenu() {
+  const linksContainer = document.getElementById('menu-links');
+  const toggle = document.getElementById('menu-toggle');
+  const panel = document.getElementById('menu-panel');
+  if (!linksContainer || !toggle || !panel) return;
+
+  let items;
+  try {
+    const res = await fetch('data/index_menu.json');
+    if (!res.ok) return;
+    items = await res.json();
+  } catch {
+    return;
+  }
+
+  linksContainer.innerHTML = items.map((item, i) => `
+    <a class="menu-link" href="${item.link}"
+       data-goatcounter-click="menu-${i}" data-goatcounter-title="Menu - ${item.title}">
+      ${item.title}
+    </a>
+  `).join('');
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = panel.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel.classList.contains('open')) return;
+    if (panel.contains(e.target) || toggle.contains(e.target)) return;
+    panel.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  });
 
   if (window.goatcounter) window.goatcounter.bind_events();
 }

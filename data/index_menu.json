@@ -1,0 +1,8 @@
+[
+  { "title": "Accueil", "link": "/" },
+  { "title": "Actualité", "link": "actu.html" },
+  { "title": "Programme", "link": "agenda.html" },
+  { "title": "Billetterie", "link": "agenda.html" },
+  { "title": "Booking", "link": "booking.html" },
+  { "title": "Biographie", "link": "biographie.html" }
+]
