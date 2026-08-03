@@ -80,14 +80,24 @@ body {
 }
 
 /* HEADER (page d'accueil) */
+/* HEADER (page d'accueil) — logo et sous-titre uniquement */
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 24px 0;
+}
+
+/* MAIN (page d'accueil) — tout le contenu, centré */
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px 24px 60px;
+  padding: 0 24px 60px;
   position: relative;
 }
 
@@ -184,9 +194,6 @@ h1 {
 }
 
 /* PAGE ACTUALITÉ / ARTICLE */
-main {
-  flex: 1;
-}
 
 .page-title {
   text-align: center;
@@ -213,9 +220,7 @@ main {
 }
 
 .article-date {
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.15em;
+  font-size: 9px;
   color: var(--gray);
   text-transform: uppercase;
   margin-bottom: 12px;
