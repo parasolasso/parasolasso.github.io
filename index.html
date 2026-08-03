@@ -4,269 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOUT LE MONDE DÉTESTE</title>
-    <link rel="icon" type="image/svg+xml" href="tlmd_LOGO_sqr.svg">
+    <link rel="icon" type="image/svg+xml" href="images/tlmd_LOGO_sqr.svg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0a0a0a;
-      --white: #f5f5f5;
-      --gray: #999;
-      --border: rgba(255,255,255,0.1);
-    }
-
-    html, body {
-      height: 100%;
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* HEADER */
-    header {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px 24px 60px;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      letter-spacing: -0.02em;
-      line-height: 1;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-
-    .subtitle {
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      color: var(--gray);
-      text-transform: uppercase;
-      margin-bottom: 60px;
-    }
-
-    .section {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      color: var(--white);
-      text-transform: uppercase;
-      margin: 48px 0 24px;
-    }
-
-    /* BOUTONS */
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      color: var(--white);
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      border-radius: 2px;
-    }
-
-    .btn:hover {
-      background: var(--white);
-      color: var(--black);
-      border-color: var(--white);
-    }
-
-    .btn img {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-      transition: filter 0.2s;
-    }
-
-    .btn:hover img {
-      filter: invert(1);
-    }
-
-    .btn-epk {
-      border-color: rgba(255,255,255,0.5);
-    }
-
-    .btn-epk:hover {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    /* DIVIDER */
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--border);
-      margin: 48px auto 0;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      text-align: center;
-    }
-
-    .legal {
-      font-size: 10px;
-      font-weight: 300;
-      color: var(--gray);
-      letter-spacing: 0.08em;
-      line-height: 2;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .legal strong {
-      color: rgba(255,255,255,0.4);
-      font-weight: 400;
-    }
-
-    .legal a {
-      color: var(--gray);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(153,153,153,0.3);
-      transition: color 0.2s;
-    }
-
-    .legal a:hover {
-      color: var(--white);
-    }
-
-    /* MODAL MENTIONS LÉGALES / CONTACT */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .modal-overlay.open {
-      display: flex;
-    }
-
-    .modal {
-      background: #111;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 40px;
-      max-width: 540px;
-      width: 100%;
-      position: relative;
-    }
-
-    .modal h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      color: var(--white);
-    }
-
-    .modal p {
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--gray);
-      line-height: 1.9;
-      margin-bottom: 12px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: var(--gray);
-      font-size: 20px;
-      cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1;
-      transition: color 0.2s;
-    }
-
-    .modal-close:hover { color: var(--white); }
-
-    @media (max-width: 480px) {
-      .modal { padding: 32px 24px; }
-      h1 { font-size: 2.8rem; }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div id="site-header"></div>
+
   <header>
-    <img src="tlmd_LOGO_sqr.svg" alt="TLMD Logo" style="max-width: 350px; margin-bottom: 16px;">
+    <img src="images/tlmd_LOGO_sqr.svg" alt="TLMD Logo" style="max-width: 200px; margin-bottom: 16px;">
     <p class="subtitle">— TLMD.FR —</p>
 
     <p class="section">ÉCOUTER EN STREAMING.</p>
     <div class="buttons">
+      
+      <a class="btn" href="https://spotify.com" target="_blank" rel="noopener" data-goatcounter-click="spotify" data-goatcounter-title="Spotify">
+        <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
+        Spotify
+      </a>
+      
+      <a class="btn" href="https://deezer.com" target="_blank" rel="noopener" data-goatcounter-click="deezer" data-goatcounter-title="Deezer">
+        <img src="https://cdn.simpleicons.org/deezer/A238FF" alt="">
+        Deezer
+      </a>
+      
+      <a class="btn" href="https://music.apple.com/" target="_blank" rel="noopener" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music">
+        <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="">
+        Apple Music
+      </a>
       <a class="btn" href="https://soundcloud.com/toutlemondedeteste" target="_blank" rel="noopener" data-goatcounter-click="soundcloud" data-goatcounter-title="SoundCloud">
         <img src="https://cdn.simpleicons.org/soundcloud/FF5500" alt="">
         SoundCloud
       </a>
-
-      <a class="btn" href="https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs?si=DERVrEzZTKyfqU5TQLVSbw" target="_blank" rel="noopener" data-goatcounter-click="spotify" data-goatcounter-title="Spotify">
-        <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
-        Spotify
-      </a>
-
-      <a class="btn" href="https://www.deezer.com/us/artist/405527272" target="_blank" rel="noopener" data-goatcounter-click="deezer" data-goatcounter-title="Deezer">
-        <img src="https://cdn.simpleicons.org/deezer/A238FF" alt="">
-        Deezer
-      </a>
-
-      <a class="btn" href="https://music.apple.com/us/artist/tout-le-monde-d%C3%A9teste/6793886778" target="_blank" rel="noopener" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music">
-        <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="">
-        Apple Music
-      </a>
     </div>
 
-    
+    <p class="section">ACTUALITÉS. 
+      <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">
+      <img src="https://api.iconify.design/mdi/feather.svg?color=%23f5f5f5" alt="" style="width:16px;height:16px;vertical-align:-2px;margin-right:8px;">
+      Toutes les actus
+      </a></p>
+    <div class="news-summary" id="news-summary"></div>
+    <a class="carousel-indicator" id="news-indicator"></a>
+    <!-- <div class="buttons">
+      <a class="btn" href="actu.html" data-goatcounter-click="voir-plus-actu" data-goatcounter-title="Voir plus - Actu">Toutes les actus</a>
+    </div> -->
+
+
+    <p class="section">PROGRAMME ET BILLETTERIE.</p>
+    <div class="buttons">
+      <a class="btn" href="agenda.html" target="_blank" rel="noopener" data-goatcounter-click="agenda" data-goatcounter-title="Agenda">
+        <img src="https://api.iconify.design/mdi/calendar.svg?color=%23f5f5f5" alt="">
+        Évènement
+      </a>
+      <button class="btn" onclick="document.getElementById('ticket-modal').classList.add('open')" data-goatcounter-click="billetterie-OPEN" data-goatcounter-title="Contact">
+        <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
+        Billetterie
+      </button>
+      <!-- <a class="btn" href="https://shotgun.live" target="_blank" rel="noopener" data-goatcounter-click="billetterie" data-goatcounter-title="Billetterie">
+        <img src="https://api.iconify.design/mdi/ticket-outline.svg?color=%23f5f5f5" alt="">
+        Billetterie
+      </a> -->
+    </div>
 
     <p class="section">NOUS PROGRAMMER.</p>
     <div class="buttons">
-      <a class="btn" href="https://drive.google.com/file/d/1-lSeBXQOhORbO7izykNqu1bAXUc_06kj/view?usp=drive_link" target="_blank" rel="noopener" data-goatcounter-click="epk" data-goatcounter-title="EPK">
+      <a class="btn btn-epk" href="https://drive.google.com/file/d/1-lSeBXQOhORbO7izykNqu1bAXUc_06kj/view?usp=drive_link" target="_blank" rel="noopener" data-goatcounter-click="epk" data-goatcounter-title="EPK">
         <img src="https://api.iconify.design/mdi/folder-download-outline.svg?color=%23f5f5f5" alt="">
         EPK
       </a>
@@ -293,16 +96,6 @@
     <div class="divider"></div>
   </header>
 
-  <footer>
-    <p class="legal">
-      <strong>Mentions légales</strong><br>
-      Direction de publication : Parasol Association, Paris 17<br>
-      Hébergeur : GitHub, Inc.<br>
-      Toute reproduction, même partielle, est interdite sans autorisation préalable.<br>
-      <a href="#" onclick="document.getElementById('legal-modal').classList.add('open'); return false;">Voir les mentions légales complètes</a>
-    </p>
-  </footer>
-
   <!-- MODAL CONTACT -->
   <div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)this.classList.remove('open')">
     <div class="modal">
@@ -313,27 +106,22 @@
     </div>
   </div>
 
-  <!-- MODAL MENTIONS LÉGALES -->
-  <div class="modal-overlay" id="legal-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-overlay" id="ticket-modal" onclick="if(event.target===this)this.classList.remove('open')">
     <div class="modal">
-      <button class="modal-close" onclick="document.getElementById('legal-modal').classList.remove('open')">×</button>
-      <h2>Mentions légales</h2>
-      <p><strong style="color:rgba(255,255,255,0.4)">Éditeur du site</strong><br>
-      Parasol Association<br>
-      Paris 17<br>
-      Contact : parasol.wav@gmail.com</p>
-      <p><strong style="color:rgba(255,255,255,0.4)">Hébergeur</strong><br>
-      GitHub, Inc.<br>
-      88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
-      <a href="https://github.com" target="_blank">github.com</a></p>
-      <p><strong style="color:rgba(255,255,255,0.4)">Propriété intellectuelle</strong><br>
-      L'ensemble des contenus présents sur ce site (textes, visuels, sons) est protégé par le droit d'auteur. Toute reproduction sans autorisation est strictement interdite.</p>
-      <p><strong style="color:rgba(255,255,255,0.4)">Données personnelles</strong><br>
-      Ce site ne collecte aucune donnée personnelle identifiante. Il utilise uniquement un outil de mesure d'audience (GoatCounter) destiné à comptabiliser de manière anonyme le nombre de visites et de clics sur les liens de la page, dans le seul but de comprendre la fréquentation du site.<br><br>
-      Cet outil ne dépose aucun cookie, ne collecte ni adresse IP ni identifiant permettant de suivre un visiteur individuellement, et ne transmet aucune donnée à des tiers à des fins publicitaires ou commerciales. Conformément à l'article 82 de la loi Informatique et Libertés, ce type de traceur, strictement limité à la mesure d'audience et ne produisant que des statistiques anonymes, est exempté de recueil du consentement préalable.</p>
+      <button class="modal-close" onclick="document.getElementById('ticket-modal').classList.remove('open')">×</button>
+      <h2>BILLETTERIE</h2>
+      <p>Patience! Les dates arrivent prochainement...<br>
     </div>
   </div>
 
+  <div id="site-footer"></div>
+
+  <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
+  <script src="js/actu.js"></script>
+  <script>renderHomeSummary();</script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  
   <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
