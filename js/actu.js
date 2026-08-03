@@ -6,10 +6,22 @@ async function loadActus() {
   return actus;
 }
 
+function formatEventDate(dateStr) {
+  const mois = [
+    'Jan', 'Fev', 'Mars', 'Avril', 'Mai', 'Juin',
+    'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'
+  ];
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return {
+    day: String(day).padStart(2, '0'),
+    month: mois[month - 1]
+  };
+}
+
 // Page d'accueil : carrousel des 5 prochaines actualités
 async function renderHomeSummary() {
   const actus = await loadActus();
-  const items = actus.slice(0, 5);
+  const items = actus.filter(a => a['isOnMain']).slice(0, 5);
   const container = document.getElementById('news-summary');
   const indicator = document.getElementById('news-indicator');
   if (!items.length || !container) return;
@@ -67,15 +79,17 @@ async function renderAgenda() {
   const events = actus.filter(a => a.isEvent);
   const container = document.getElementById('agenda-list');
   if (!container) return;
-  container.innerHTML = events.map((e, i) => `
+ container.innerHTML = events.map((e, i) => {
+  const { day, month } = formatEventDate(e.date);
+  return `
     <div class="event-item">
       <div class="event-date">
-        <span class="day">${e.day}</span>
-        <span class="month">${e.month}</span>
+        <span class="day">${day}</span>
+        <span class="month">${month}</span>
       </div>
       <div class="event-info">
         <h3>${e.title}</h3>
-        <p>${e.venue}</p>
+        <p>${!e.venue || e.venue === '#' ? '' : e.venue}</p>
       </div>
       <a class="event-link" href="actu.html#actu-${e.date}" data-goatcounter-click="agenda-info-${i}" data-goatcounter-title="En savoir plus - ${e.title}">
         En savoir plus
@@ -85,5 +99,6 @@ async function renderAgenda() {
         Billets
       </a>`}
     </div>
-  `).join('');
+  `;
+}).join('');
 }

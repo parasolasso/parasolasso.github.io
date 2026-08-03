@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-01",
+  "title": "TLMD.fr est online!",
+  "summary": "TLMD.fr regroupe tous les liens de stream, les dates de porgrammation et les détails sur l'actualité du groupe.",
+  "text": [
+    "TLMD.fr regroupe tous les liens de stream, les dates de porgrammation et les détails sur l'actualité du groupe.",
+    "Pas de Linktree, pas de cookies, une solution open-source et custom."
+  ],
+  "image": "images/2026-10-01.png",
+  "isOnMain": true,
+  "isEvent": true,
+  "venue": false,
+  "ticketLink": false
+}
