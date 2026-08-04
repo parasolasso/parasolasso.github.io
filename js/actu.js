@@ -98,6 +98,7 @@ async function renderActuList() {
           </a>`).join('')}
         </div>` : ''}
     </article>
+    <div class="divider"></div>
   `).join('');
   container.querySelectorAll('.article img').forEach(img => {
     img.addEventListener('click', () => {

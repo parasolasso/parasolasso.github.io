@@ -1,20 +1,7 @@
 <footer>
+  <div class="footer-links" id="footer-links"></div>
+  <div class="divider" style="margin: 9px auto 9px;"></div>
   <p class="legal">
-    <strong>Mentions légales</strong><br>
-    Direction de publication : Parasol Association, Paris 17<br>
-    Hébergeur : GitHub, Inc.<br>
-    Toute reproduction, même partielle, est interdite sans autorisation préalable.<br>
-    <a href="legal.html">Voir les mentions légales complètes</a> · 
-    <a href="#" onclick="document.getElementById('contact-modal').classList.add('open'); return false;">Nous contacter</a>
+    <a href="legal.html">Voir les mentions légales</a>
   </p>
 </footer>
-
-<!-- MODAL CONTACT -->
-<div class="modal-overlay" id="contact-modal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('contact-modal').classList.remove('open')">×</button>
-    <h2>CONTACT</h2>
-    <p>Pour toute demande professionnelle (booking, presse, facture), contactez :<br>
-    <a href="mailto:contact@tlmd.fr" style="color:rgba(255,255,255,0.5);">contact@tlmd.fr</a></p>
-  </div>
-</div>

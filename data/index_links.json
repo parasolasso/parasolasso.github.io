@@ -1,0 +1,14 @@
+{
+  "hotTitle": "Burn-Out LIVE",
+  "listenButtons": [
+    { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Deezer", "link": "https://www.deezer.com/fr/artist/405527272", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Apple Music", "link": "https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+  ],
+  "socialsButtons": [
+    { "label": "Instagram", "link": "https://www.instagram.com/tlmd.fr/", "logo": "https://cdn.simpleicons.org/instagram/E4405F" },
+    { "label": "Facebook", "link": "https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/", "logo": "https://cdn.simpleicons.org/facebook/1877F2" },
+    { "label": "Youtube", "link": "https://www.youtube.com/@TOUTLEMONDED%C3%89TESTE", "logo": "https://cdn.simpleicons.org/youtube/FF0000" }
+  ]
+}

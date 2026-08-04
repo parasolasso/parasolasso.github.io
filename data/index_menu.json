@@ -2,7 +2,6 @@
   { "title": "Accueil", "link": "/" },
   { "title": "Booking", "link": "booking.html" },
   { "title": "Actualité", "link": "actu.html" },
-  { "title": "Programme", "link": "agenda.html" },
-  { "title": "Billetterie", "link": "agenda.html" },
-  { "title": "Biographie", "link": "bio.html" }
+  { "title": "Nous Connaître", "link": "bio.html" },
+  { "title": "Agenda", "link": "agenda.html" }
 ]

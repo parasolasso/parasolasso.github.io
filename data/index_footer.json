@@ -1,0 +1,9 @@
+[
+    { "logo": "https://cdn.simpleicons.org/spotify/999999", "alt": "Spotify", "link": "https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs" },
+    { "logo": "https://cdn.simpleicons.org/deezer/999999", "alt": "Deezer", "link": "https://www.deezer.com/fr/artist/405527272" },
+    { "logo": "https://cdn.simpleicons.org/applemusic/999999", "alt": "Apple Music", "link": "https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778" },
+    { "logo": "https://cdn.simpleicons.org/soundcloud/999999", "alt": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste" },
+    { "logo": "https://cdn.simpleicons.org/instagram/999999", "alt": "Instagram", "link": "https://www.instagram.com/tlmd.fr/" },
+    { "logo": "https://cdn.simpleicons.org/facebook/999999", "alt": "Facebook", "link": "https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" },
+    { "logo": "https://api.iconify.design/mdi/email-outline.svg?color=%23999999", "alt": "Email", "link": "mailto:contact@tlmd.fr" }
+]

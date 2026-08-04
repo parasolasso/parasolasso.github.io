@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOUT LE MONDE DÉTESTE</title>
-    <link rel="icon" type="image/svg+xml" href="images/tlmd_LOGO_sqr.svg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
   </head>
@@ -17,28 +16,9 @@
       <p class="subtitle">— TLMD.FR —</p>
     </header>
     <main>
-      <p class="section">ÉCOUTER EN STREAMING.</p>
-      <div class="buttons">
-        
-        <a class="btn" href="https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs?si=sB4OaypyQ7WTBLT2g9We0A" target="_blank" rel="noopener" data-goatcounter-click="spotify" data-goatcounter-title="Spotify">
-          <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
-          Spotify
-        </a>
-        
-        <a class="btn" href="https://www.deezer.com/fr/artist/405527272" target="_blank" rel="noopener" data-goatcounter-click="deezer" data-goatcounter-title="Deezer">
-          <img src="https://cdn.simpleicons.org/deezer/A238FF" alt="">
-          Deezer
-        </a>
-        
-        <a class="btn" href="https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778" target="_blank" rel="noopener" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music">
-          <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="">
-          Apple Music
-        </a>
-        <a class="btn" href="https://soundcloud.com/toutlemondedeteste" target="_blank" rel="noopener" data-goatcounter-click="soundcloud" data-goatcounter-title="SoundCloud">
-          <img src="https://cdn.simpleicons.org/soundcloud/FF5500" alt="">
-          SoundCloud
-        </a>
-      </div>
+      <p class="section" style="margin-bottom: 12px;">ÉCOUTER LE DERNIER TITRE.</p>
+      <p id="hot-title" style="margin-bottom: 9px;"></p>
+      <div class="buttons" id="listen-buttons"></div>
 
       <p class="section">ACTUALITÉS. 
         <a class="btn" href="agenda.html" target="_blank" rel="noopener" data-goatcounter-click="agenda" data-goatcounter-title="Agenda">
@@ -62,17 +42,7 @@
       </div>
 
       <p class="section">RÉSEAUX SOCIAUX.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.instagram.com/tlmd.fr/" target="_blank" rel="noopener" data-goatcounter-click="instagram" data-goatcounter-title="Instagram">
-          <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="">
-          Instagram
-        </a>
-
-        <a class="btn" href="https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" target="_blank" rel="noopener" data-goatcounter-click="facebook" data-goatcounter-title="Facebook">
-          <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="">
-          Facebook
-        </a>
-      </div>
+      <div class="buttons" id="social-buttons"></div>
 
       <div class="divider"></div>
     </main>
@@ -100,6 +70,8 @@
     <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
     <script src="js/actu.js"></script>
     <script>renderHomeSummary();</script>
+    <script src="js/links.js"></script>
+    <script>renderHotTitle(); renderListenButtons(); renderSocialButtons();</script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     
