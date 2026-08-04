@@ -5,7 +5,7 @@
       { "type": "text", "content": "TOUT LE MONDE DÉTESTE (TLMD.) est un groupe de rock alernatif, pop. On raconte les fables modernes d’une jeunesse à la fois politisée et consumériste, aussi ouverte à l’autre qu’enfermée dans ses propres stéréotypes." },
       {
         "type": "image",
-        "src": "images/DSC03711.jpg",
+        "src": "images/DSC03711.jpeg",
         "alt": "Séance en studio"
       },
       { "type": "text", "content": "À travers des textes tour à tour poétiques ou crus, et ses passages instrumentaux, TLMD chante les relations, le travail, l’absurdité, les angoisses et les corps." }
@@ -28,7 +28,7 @@
         { "type": "text", "content": "<strong>Timothée</strong> •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
         {
             "type": "image",
-            "src": "images/arthus.jpg",
+            "src": "images/arthus.jpeg",
             "alt": "Arthus"
         },
         { "type": "text", "content": "<strong>Arthus</strong> • Chanteur, Guitariste & Développeur audio, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poingnée de titre du groupe. " }
