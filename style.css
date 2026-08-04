@@ -905,8 +905,10 @@ footer {
   background: #333;
 }
 
-.player-play-icon {
-  font-size: 14px;
+.player-placeholder img {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .player-notice {

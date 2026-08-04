@@ -16,7 +16,7 @@ async function renderHotBlock() {
     ${data.player_link ? `
     <div class="player-embed">
       <button class="player-placeholder" id="player-placeholder" data-goatcounter-click="player-load" data-goatcounter-title="Charger le lecteur SoundCloud">
-        <span class="player-play-icon">▶</span>
+        <img src="https://api.iconify.design/mdi/play.svg?color=%23f5f5f5" alt="">
         ${data.hotTitle}
       </button>
       <p class="player-notice">Charge le lecteur SoundCloud (cookies tiers)</p>
