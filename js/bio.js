@@ -4,6 +4,26 @@ async function loadBio() {
   return res.json();
 }
 
+function ensureLightbox() {
+  let overlay = document.getElementById('bio-lightbox');
+  if (overlay) return overlay;
+
+  overlay = document.createElement('div');
+  overlay.id = 'bio-lightbox';
+  overlay.className = 'modal-overlay lightbox';
+  overlay.innerHTML = `
+    <img id="bio-lightbox-img" src="" alt="">
+    <button class="modal-close" id="bio-lightbox-close">×</button>
+  `;
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.id === 'bio-lightbox-close') {
+      overlay.classList.remove('open');
+    }
+  });
+  document.body.appendChild(overlay);
+  return overlay;
+}
+
 async function renderBio() {
   const sections = await loadBio();
   const container = document.getElementById('bio_content');
@@ -32,6 +52,8 @@ async function renderBio() {
   // Détection automatique de l'orientation de chaque image, une fois chargée.
   // Si l'image est en portrait, on la regroupe avec le paragraphe qui la suit
   // directement pour l'afficher à côté (la légende, elle, reste sous la photo).
+  let portraitIndex = 0;
+
   container.querySelectorAll('.bio-image').forEach(wrapper => {
     const img = wrapper.querySelector('img');
 
@@ -43,10 +65,11 @@ async function renderBio() {
         const next = wrapper.nextElementSibling;
         if (next && next.classList.contains('bio-text')) {
           const row = document.createElement('div');
-          row.className = 'bio-portrait-row';
+          row.className = 'bio-portrait-row' + (portraitIndex % 2 === 1 ? ' bio-row-reverse' : '');
           wrapper.parentNode.insertBefore(row, wrapper);
           row.appendChild(wrapper);
           row.appendChild(next);
+          portraitIndex++;
         }
       }
     };
@@ -56,5 +79,16 @@ async function renderBio() {
     } else {
       img.addEventListener('load', finalize);
     }
+
   });
+  container.querySelectorAll('.bio-image img').forEach(img => {
+  img.addEventListener('click', () => {
+    const overlay = ensureLightbox();
+    const lightboxImg = document.getElementById('bio-lightbox-img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    overlay.classList.add('open');
+  });
+});
 }
+

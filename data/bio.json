@@ -19,19 +19,19 @@
           "src": "images/pierre.jpg",
           "alt": "Pierre"
         },
-        { "type": "text", "content": "Pierre • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations de la diversité des territoires qu'il parcours. Sur scène il est le bateur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
+        { "type": "text", "content": "<strong>Pierre</strong> • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations de la diversité des territoires qu'il parcours. Sur scène il est le batteur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
         {
           "type": "image",
           "src": "images/tim.jpg",
           "alt": "Timothée"
         },
-        { "type": "text", "content": "Timothée •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
+        { "type": "text", "content": "<strong>Timothée</strong> •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
         {
             "type": "image",
             "src": "images/arthus.jpg",
             "alt": "Arthus"
         },
-        { "type": "text", "content": "Arthus • Chanteur, Guitariste & Développeur, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poingnée de titre du groupe. " }
+        { "type": "text", "content": "<strong>Arthus</strong> • Chanteur, Guitariste & Développeur audio, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poingnée de titre du groupe. " }
     ]
   },
   {

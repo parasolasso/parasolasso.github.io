@@ -5,7 +5,7 @@ async function loadActus() {
   );
   return actus;
 }
-
+// Des outils 
 function formatEventDate(dateStr) {
   const mois = [
     'Jan', 'Fev', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -16,6 +16,26 @@ function formatEventDate(dateStr) {
     day: String(day).padStart(2, '0'),
     month: mois[month - 1]
   };
+}
+
+function ensureLightbox() {
+  let overlay = document.getElementById('actu-lightbox');
+  if (overlay) return overlay;
+
+  overlay = document.createElement('div');
+  overlay.id = 'actu-lightbox';
+  overlay.className = 'modal-overlay lightbox';
+  overlay.innerHTML = `
+    <img id="actu-lightbox-img" src="" alt="">
+    <button class="modal-close" id="actu-lightbox-close">×</button>
+  `;
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.id === 'actu-lightbox-close') {
+      overlay.classList.remove('open');
+    }
+  });
+  document.body.appendChild(overlay);
+  return overlay;
 }
 
 // Page d'accueil : carrousel des 5 prochaines actualités
@@ -65,12 +85,36 @@ async function renderActuList() {
   if (!container) return;
   container.innerHTML = actus.map(a => `
     <article class="article" id="actu-${a.date}">
-      <img src="${a.image}" alt="${a.title}">
+      <img src="${a.image}" alt="">
       <p class="article-date">${a.date}</p>
       <h2>${a.title}</h2>
       ${a.text.map(p => `<p>${p}</p>`).join('')}
+      ${a.buttons && a.buttons.length ? `
+        <div class="buttons">
+          ${a.buttons.map((b, i) => `
+          <a class="btn" href="${b.link}" target="_blank" rel="noopener" data-goatcounter-click="actu-btn-${a.date}-${i}" data-goatcounter-title="${b.label} - ${a.title}">
+            <img src="${b.logo}" alt="">
+            ${b.label}
+          </a>`).join('')}
+        </div>` : ''}
     </article>
   `).join('');
+  container.querySelectorAll('.article img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = ensureLightbox();
+      const lightboxImg = document.getElementById('actu-lightbox-img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      overlay.classList.add('open');
+    });
+  });
+
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) {
+      target.scrollIntoView();
+    }
+  }
 }
 
 // Page agenda.html : uniquement les actus marquées comme événement

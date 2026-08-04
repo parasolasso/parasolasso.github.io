@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-30",
+  "title": "Streaming!",
+  "summary": "Dispo sur toutes les plateformes!",
+  "text": [
+    "TLMD. se déploie maintenant sur de nombreuses plateformes de stream, Spotify, Deezer, Apple Music, Soundcloud et d'autres."
+
+  ],
+  "isOnMain": true,
+  "isEvent": true,
+  "venue": false,
+  "ticketLink": false,
+  "buttons": [
+    { "label": "Écouter sur Spotify", "link": "https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Écouter sur Deezer", "link": "https://www.deezer.com/fr/artist/405527272", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Écouter sur Apple Music", "link": "https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+{ "label": "Écouter sur SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+  ]
+}
