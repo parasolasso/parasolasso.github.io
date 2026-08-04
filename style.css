@@ -869,3 +869,50 @@ footer {
 .footer-icon:hover img {
   opacity: 1;
 }
+
+.player-embed {
+  max-width: 480px;
+  margin: 0 auto 20px;
+}
+
+.player-embed iframe {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.player-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.player-placeholder:hover {
+  background: #333;
+}
+
+.player-play-icon {
+  font-size: 14px;
+}
+
+.player-notice {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 6px;
+}

@@ -1,3 +1,44 @@
+// Titre du moment + lecteur SoundCloud (page d'accueil), rendus depuis data/index_links.json
+async function renderHotBlock() {
+  const container = document.getElementById('hot-block');
+  if (!container) return;
+
+  let data;
+  try {
+    const res = await fetch('data/index_links.json');
+    if (!res.ok) return;
+    data = await res.json();
+  } catch {
+    return;
+  }
+
+  container.innerHTML = `
+    ${data.player_link ? `
+    <div class="player-embed">
+      <button class="player-placeholder" id="player-placeholder" data-goatcounter-click="player-load" data-goatcounter-title="Charger le lecteur SoundCloud">
+        <span class="player-play-icon">▶</span>
+        ${data.hotTitle}
+      </button>
+      <p class="player-notice">Charge le lecteur SoundCloud (cookies tiers)</p>
+    </div>` : ''}
+  `;
+
+  const placeholder = document.getElementById('player-placeholder');
+  if (placeholder) {
+    placeholder.addEventListener('click', () => {
+      const wrapper = placeholder.parentElement;
+      wrapper.innerHTML = `
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="${data.player_link}">
+        </iframe>
+      `;
+      if (window.goatcounter) window.goatcounter.bind_events();
+    });
+  }
+
+  if (window.goatcounter) window.goatcounter.bind_events();
+}
+
 // Boutons "Écouter en streaming" (page d'accueil), rendus depuis data/index_links.json
 async function renderListenButtons() {
   const container = document.getElementById('listen-buttons');
@@ -52,22 +93,4 @@ async function renderSocialButtons() {
   `).join('');
 
   if (window.goatcounter) window.goatcounter.bind_events();
-}
-
-// Titre du moment (page d'accueil), rendu depuis data/index_links.json
-async function renderHotTitle() {
-  const container = document.getElementById('hot-title');
-  if (!container) return;
- 
-  let data;
-  try {
-    const res = await fetch('data/index_links.json');
-    if (!res.ok) return;
-    data = await res.json();
-  } catch {
-    return;
-  }
- 
-  if (!data.hotTitle) return;
-  container.textContent = data.hotTitle;
 }
