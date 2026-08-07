@@ -1,7 +1,7 @@
 {
   "name": "TicTacToes Metronome Mini",
   "short_name": "TicTacToes Mini",
-  "start_url": "/",
+  "start_url": "/tictactoesMini.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
