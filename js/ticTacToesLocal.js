@@ -36,6 +36,16 @@ import '@ircam/sc-components/sc-icon.js';
 import '@ircam/sc-components/sc-select.js';
 
 async function main($container) {
+  // --- SERVICE WORKER (fonctionnement hors-ligne) ---
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('/sw.js');
+      console.log('Service Worker enregistré');
+    } catch (err) {
+      console.warn('Échec de l\'enregistrement du Service Worker :', err.message);
+    }
+  }
+
   // --- PWA setup ---
   const manifestLink = document.createElement('link');
   manifestLink.rel = 'manifest';
@@ -122,10 +132,7 @@ async function main($container) {
   console.log('Loading audio assets...');
   const audioFiles = [
     'assets/hh.wav',
-    'assets/clap.wav',
     'assets/rimshot.wav',
-    'assets/snare.wav',
-    'assets/kick.wav',
   ];
 
   const loader = new AudioBufferLoader(audioContext);
@@ -211,7 +218,7 @@ async function main($container) {
     if (currentStep === 0) {
       triggerSoundFile(processorTime, 0);
     } else {
-      triggerSoundFile(processorTime, 2);
+      triggerSoundFile(processorTime, 1);
     }
 
     currentStep = (currentStep + 1) % (bar * subfactor);
