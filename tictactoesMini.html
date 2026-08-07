@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <title>TicTacToes</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+        <div id="site-header"></div>
+        <div id="tictactoes-app" class="tictactoes-app"></div>
+        <div> </div>
+        <div id="site-footer"></div>
+        <script src="js/header.js"></script>
+        <script src="js/footer.js"></script>
+
+        <script type="importmap">
+        {
+        "imports": {
+            "lit": "https://esm.sh/lit@3",
+            "@ircam/sc-loader": "https://esm.sh/@ircam/sc-loader",
+            "@ircam/sc-scheduling": "https://esm.sh/@ircam/sc-scheduling",
+            "@ircam/sc-components/sc-text.js": "https://esm.sh/@ircam/sc-components/sc-text.js",
+            "@ircam/sc-components/sc-transport.js": "https://esm.sh/@ircam/sc-components/sc-transport.js",
+            "@ircam/sc-components/sc-number.js": "https://esm.sh/@ircam/sc-components/sc-number.js",
+            "@ircam/sc-components/sc-slider.js": "https://esm.sh/@ircam/sc-components/sc-slider.js",
+            "@ircam/sc-components/sc-tap-tempo.js": "https://esm.sh/@ircam/sc-components/sc-tap-tempo.js",
+            "@ircam/sc-components/sc-icon.js": "https://esm.sh/@ircam/sc-components/sc-icon.js",
+            "@ircam/sc-components/sc-select.js": "https://esm.sh/@ircam/sc-components/sc-select.js"
+        }
+        }
+        </script>
+        <script type="module" src="/js/ticTacToesLocal.js"></script>
+    
+  </body>
+</html>

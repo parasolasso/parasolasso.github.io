@@ -1,0 +1,226 @@
+.tictactoes-app {
+  color-scheme: dark;
+  --sw-background-color: transparent;
+  --sw-medium-background-color: #121212;
+  --sw-light-background-color: #242424;
+  --sw-lighter-background-color: #363636;
+  --sw-font-color: #ffffff;
+  --sw-light-font-color: #cccccc;
+  --sw-font-color-error: #a94442;
+  --sw-font-family: 'Montserrat', sans-serif;
+  --sw-font-size: 62.5%;
+  --sc-color-primary-2: var(--sw-medium-background-color);
+  --sc-color-primary-3: var(--sw-lighter-background-color);
+  --sc-color-primary-5: var(--sw-font-color);
+  width: 100%;
+  background-color: var(--sw-background-color);
+  color: var(--sw-font-color);
+  font-size: var(--sw-font-size);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.tictactoes-app * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--sw-font-family);
+}
+.tictactoes-app body.loading {
+  background-image: url(../../images/loader.gif);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.tictactoes-app .simple-layout {
+  display: block;
+  flex-grow: 1;
+  padding: 20px;
+  position: relative;
+}
+.tictactoes-app .controller-layout {
+  display: block;
+  flex-grow: 1;
+  position: relative;
+}
+.tictactoes-app .controller-layout > header {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  background-color: var(--sw-medium-background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--sw-lighter-background-color);
+}
+.tictactoes-app .controller-layout > header h1 {
+  font-size: 12px;
+  margin: 0;
+  padding-left: 20px;
+  max-width: 50%;
+  overflow: hidden;
+}
+.tictactoes-app .controller-layout > header sc-audit {
+  max-width: 50%;
+}
+.tictactoes-app .controller-layout > section {
+  padding: 20px;
+}
+.tictactoes-app .player-layout {
+  display: block;
+  flex-grow: 1;
+  position: relative;
+}
+.tictactoes-app .player-layout > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  line-height: 38px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--sw-medium-background-color);
+}
+.tictactoes-app .player-layout > header h1 {
+  font-size: 12px;
+  margin: 0;
+  padding-left: 20px;
+}
+.tictactoes-app .player-layout > section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tictactoes-app .player-layout sc-number {
+  font-size: 100%;
+}
+.tictactoes-app .player-layout sc-slider {
+  width: 100%;
+  height: 30px;
+}
+.tictactoes-app .player-layout sc-select {
+  --sc-button-background-color: var(--sc-color-primary-2);
+}
+.tictactoes-app .player-layout sc-qrcode {
+  border-radius: 15%;
+  background-color: var(--sw-medium-background-color);
+}
+.tictactoes-app .box {
+  position: relative;
+  border: 1px solid var(--sw-lighter-background-color);
+  border-radius: 10px;
+  background-color: var(--sw-medium-background-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 460px;
+}
+.tictactoes-app .box-logo {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 32px;
+  height: auto;
+  border-color: transparent;
+  background-color: transparent;
+}
+.tictactoes-app .box-row {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: 460px;
+}
+.tictactoes-app .box-row--sync {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tictactoes-app .separator {
+  font-size: 1.8rem;
+  color: var(--sw-light-font-color);
+}
+.tictactoes-app #sync-icon {
+  width: 30px;
+  height: 30px;
+  --sc-icon-color: rgb(255, 157, 0);
+  --sc-icon-active: var(--sc-color-secondary-3);
+  border-color: transparent;
+  background-color: transparent;
+}
+.tictactoes-app #mute-icon {
+  width: 60px;
+  height: auto;
+  --sc-icon-color: rgb(255, 255, 255);
+  --sc-icon-active: var(--sc-color-secondary-3);
+}
+.tictactoes-app #bigBPM {
+  font-size: 60px;
+  font-weight: bold;
+}
+.tictactoes-app .lock-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+.tictactoes-app .qr-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tictactoes-app .lock-button {
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 15%;
+  background-color: var(--sw-light-background-color);
+  align-items: center;
+  justify-content: center;
+}
+.tictactoes-app .qr-button {
+  bottom: 16px;
+  left: 16px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 15%;
+  background-color: var(--sw-light-background-color);
+}
+.tictactoes-app .time-signature-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.tictactoes-app .start-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.tictactoes-app .start-button {
+  padding: 16px 32px;
+  font-size: 18px;
+  background-color: var(--sw-light-background-color);
+  color: var(--sw-font-color);
+  border: 1px solid var(--sw-lighter-background-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=app.css.map */

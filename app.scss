@@ -1,0 +1,264 @@
+.tictactoes-app{
+    // Variables CSS déclarées directement sur le conteneur —
+  // elles seront héritées par tous les descendants normalement
+  color-scheme: dark;
+  --sw-background-color: transparent;
+  --sw-medium-background-color: #121212;
+  --sw-light-background-color: #242424;
+  --sw-lighter-background-color: #363636;
+  --sw-font-color: #ffffff;
+  --sw-light-font-color: #cccccc;
+  --sw-font-color-error: #a94442;
+  --sw-font-family: 'Montserrat', sans-serif;
+  --sw-font-size: 62.5%;
+  --sc-color-primary-2: var(--sw-medium-background-color);
+  --sc-color-primary-3: var(--sw-lighter-background-color);
+  --sc-color-primary-5: var(--sw-font-color);
+
+  width: 100%;
+  // min-height: 60vh;
+  background-color: var(--sw-background-color);
+  color: var(--sw-font-color);
+  font-size: var(--sw-font-size);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--sw-font-family);
+  }
+
+  body.loading {
+    background-image: url(../../images/loader.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .simple-layout {
+    display: block;
+    flex-grow: 1;
+    padding: 20px;
+    position: relative;
+  }
+
+  // default styles for controller layout
+  .controller-layout {
+    display: block;
+    flex-grow: 1;
+    position: relative;
+
+    & > header {
+      display: block;
+      height: 38px;
+      line-height: 38px;
+      background-color: var(--sw-medium-background-color);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--sw-lighter-background-color);
+      
+      h1 {
+        font-size: 12px;
+        margin: 0;
+        padding-left: 20px;
+        max-width: 50%;
+        overflow: hidden;
+      }
+
+      sc-audit {
+        max-width: 50%;
+      }
+    }
+
+    & > section {
+      padding: 20px;
+    }
+  }
+
+  .player-layout {
+    display: block;
+    flex-grow: 1;
+    position: relative;
+
+    & > header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 38px;
+      line-height: 38px;
+      // background-color: var(--sw-medium-background-color);
+      background-color: transparent;
+      border-bottom: 1px solid var(--sw-medium-background-color);
+
+      h1 {
+        font-size: 12px;
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+
+    & > section {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    sc-number {
+      font-size: 100%;   
+    }
+
+    sc-slider {
+      width: 100%;
+      height: 30px;
+    }
+
+    sc-select {
+      --sc-button-background-color: var(--sc-color-primary-2);
+    }
+
+    sc-qrcode {
+      border-radius: 15%;
+      background-color: var(--sw-medium-background-color);
+    }
+  }
+
+  .box {
+    position: relative;
+    border: 1px solid var(--sw-lighter-background-color);
+    border-radius: 10px;
+    background-color: var(--sw-medium-background-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 460px;
+  }
+
+  .box-logo {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 32px;
+    height: auto;
+    // border-radius: 4px;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .box-row {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    max-width: 460px;
+  }
+
+  .box-row--sync {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    margin: 0;              // annule le margin-top:12px hérité de .box-row, devenu inutile
+    display: flex;          // conservé pour garder icône + texte alignés horizontalement
+    align-items: center;
+    gap: 6px;                // espace interne entre le texte et sc-icon
+  }
+
+  .separator {
+    font-size: 1.8rem;
+    color: var(--sw-light-font-color);
+  }
+
+  #sync-icon {
+    width: 30px;
+    height: 30px;
+    --sc-icon-color: rgb(255, 157, 0);
+    --sc-icon-active: var(--sc-color-secondary-3);
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  #mute-icon {
+    width: 60px;
+    height: auto;
+    --sc-icon-color: rgb(255, 255, 255);
+    --sc-icon-active: var(--sc-color-secondary-3);
+  }
+
+  #bigBPM {
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  .lock-overlay {
+    position: fixed;
+    inset: 0; // équivalent à top/left/right/bottom: 0
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+  }
+
+  .qr-overlay {
+    position: fixed;
+    inset: 0; // équivalent à top/left/right/bottom: 0
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+
+  .lock-button {
+    // position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    background-color: var(--sw-light-background-color);
+    align-items: center;
+    justify-content: center; 
+  }
+
+  .qr-button {
+    // position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    background-color: var(--sw-light-background-color);
+  }
+
+  .time-signature-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 1;           // peut rétrécir si l'espace manque
+    min-width: 0;  
+  }
+
+  .start-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .start-button {
+    padding: 16px 32px;
+    font-size: 18px;
+    background-color: var(--sw-light-background-color);
+    color: var(--sw-font-color);
+    border: 1px solid var(--sw-lighter-background-color);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
