@@ -43,21 +43,30 @@ self.addEventListener('fetch', (event) => {
       if (cachedResponse) {
         return cachedResponse;
       }
- 
       return fetch(event.request)
         .then((networkResponse) => {
+          // Safari refuse une réponse de navigation marquée "redirected" —
+          // on reconstruit une réponse "propre" avant toute utilisation
+          const finalResponse = networkResponse.redirected
+            ? new Response(networkResponse.body, {
+                status: networkResponse.status,
+                statusText: networkResponse.statusText,
+                headers: networkResponse.headers,
+              })
+            : networkResponse;
+
           // ne met en cache que les réponses valides, même origine
           if (
-            networkResponse &&
-            networkResponse.status === 200 &&
+            finalResponse &&
+            finalResponse.status === 200 &&
             event.request.url.startsWith(self.location.origin)
           ) {
-            const responseClone = networkResponse.clone();
+            const responseClone = finalResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
               cache.put(event.request, responseClone);
             });
           }
-          return networkResponse;
+          return finalResponse;
         })
         .catch(() => {
           // hors-ligne et rien en cache pour cette ressource : échec silencieux
