@@ -40,9 +40,9 @@ async function main($container) {
   if ('serviceWorker' in navigator) {
     try {
       await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker enregistré');
+      console.log('Service Worker Registered');
     } catch (err) {
-      console.warn('Échec de l\'enregistrement du Service Worker :', err.message);
+      console.warn('Fail to register Service Worker :', err.message);
     }
   }
 
@@ -262,15 +262,18 @@ function renderResumeScreen() {
     if (audioContext.state === 'suspended') {
         await audioContext.resume();
       }
-    currentStep = 0;
-    running = true;
-    const startTime = audioContext.currentTime + 0.1;
-    scheduler.add(processor, startTime);
-    requestWakeLock();
-    renderApp();
-  }
-
+      stopVolNode.gain.value = 1;
+      currentStep = 0;
+      running = true;
+      const startTime = audioContext.currentTime + 0.1;
+      scheduler.add(processor, startTime);
+      requestWakeLock();
+      renderApp();
+    }
+    
   function stopMetronome() {
+    // avoid steps to play when visuel is showing stop
+    stopVolNode.gain.value = 0;
     running = false;
     if (scheduler.has(processor)) {
       scheduler.remove(processor);
@@ -321,10 +324,8 @@ function renderResumeScreen() {
                 value=${running ? 'play' : 'stop'}
                 @change=${async e => {
                   if (e.detail.value === 'stop') {
-                    stopVolNode.gain.value = 0;
                     stopMetronome();
                   } else {
-                    stopVolNode.gain.value = 1;
                     await startMetronome();
                   }
                 }}
