@@ -313,7 +313,7 @@ function renderResumeScreen() {
                 style="width: auto; height: 60px;"
                 .buttons=${['play', 'stop']}
                 value=${running ? 'play' : 'stop'}
-                @change=${e => {
+                @change=${async e => {
                   if (e.detail.value === 'stop') {
                     stopMetronome();
                   } else {
