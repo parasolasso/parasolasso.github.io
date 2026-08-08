@@ -115,30 +115,32 @@ async function main($container) {
   });
 
   function checkAudioContextHealth() {
-  if (audioContext.state !== 'running') {
-    running = false;
-    if (scheduler.has(processor)) {
-      scheduler.remove(processor);
+    console.log('AudioContexteHealth:',audioContext.state);
+    if (audioContext.state !== 'running') {
+      stopVolNode.gain.value=0;
+      running = false;
+      if (scheduler.has(processor)) {
+        scheduler.remove(processor);
+      }
+      renderResumeScreen();
     }
-    renderResumeScreen();
   }
-}
 
-function renderResumeScreen() {
-  render(html`
-    <div class="start-layout">
-      <button
-        class="start-button"
-        @click=${async () => {
-          await unlockAudioContext();
-          renderApp();
-        }}
-      >
-        Reprendre le métronome
-      </button>
-    </div>
-  `, $container);
-}
+  function renderResumeScreen() {
+    render(html`
+      <div class="start-layout">
+        <button
+          class="start-button"
+          @click=${async () => {
+            await unlockAudioContext();
+            renderApp();
+          }}
+        >
+          Reprendre le métronome
+        </button>
+      </div>
+    `, $container);
+  }
 
   // --- ETAT LOCAL (remplace les shared states soundworks) ---
   let BPM = 120;
@@ -148,9 +150,12 @@ function renderResumeScreen() {
   let subdivision = 'Noire';
   let mute = false;
   let volume = 1;
-  let stopVol = 1;
+  let stopVol = 0;
 
   const audioContext = new AudioContext();
+  audioContext.addEventListener('statechange', () => {
+    console.log('[STATECHANGE]', new Date().toISOString(), audioContext.state);
+  });
 
   const volumeNode = audioContext.createGain();
   volumeNode.gain.value = volume;
@@ -242,6 +247,20 @@ function renderResumeScreen() {
     }
   }
 
+  async function forceAudioContextRenegotiation() {
+    console.log('Avant renégociation, state:', audioContext.state);
+
+    try {
+      await audioContext.suspend();
+      console.log('Après suspend(), state:', audioContext.state);
+
+      await audioContext.resume();
+      console.log('Après resume(), state:', audioContext.state);
+    } catch (err) {
+      console.error('Erreur pendant la renégociation:', err.name, err.message);
+    }
+  }
+
   function processor(currentTime, processorTime) {
     subfactor = subdivisionToFactor(subdivision);
 
@@ -259,14 +278,17 @@ function renderResumeScreen() {
   }
 
   async function startMetronome() {
-    if (audioContext.state === 'suspended') {
-        await audioContext.resume();
-      }
+    // if (audioContext.state === 'suspended') {
+    //     await audioContext.resume();
+    //   }
+      await forceAudioContextRenegotiation();
       stopVolNode.gain.value = 1;
       currentStep = 0;
       running = true;
       const startTime = audioContext.currentTime + 0.1;
+       console.log('startMetronome appelé, currentTime:', audioContext.currentTime, 'startTime:', startTime);
       scheduler.add(processor, startTime);
+      console.log('scheduler.has(processor) after add:', scheduler.has(processor));
       requestWakeLock();
       renderApp();
     }
@@ -459,14 +481,17 @@ function renderResumeScreen() {
   }
 
   window.addEventListener('pageshow', (event) => {
+    console.log("PageShow",event);
     if (event.persisted) {
       checkAudioContextHealth();
     }
   });
 
-  window.addEventListener('visibilitychange', () => {
+  window.addEventListener('visibilitychange', async () => {
+    console.log("Visibility Change", document.visibilityState);
     if (document.visibilityState === 'visible') {
       checkAudioContextHealth();
+      if (!running) await forceAudioContextRenegotiation();
     }
   });
 
