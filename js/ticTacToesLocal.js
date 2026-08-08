@@ -148,12 +148,18 @@ function renderResumeScreen() {
   let subdivision = 'Noire';
   let mute = false;
   let volume = 1;
+  let stopVol = 1;
 
   const audioContext = new AudioContext();
 
   const volumeNode = audioContext.createGain();
   volumeNode.gain.value = volume;
-  volumeNode.connect(audioContext.destination);
+  
+  const stopVolNode = audioContext.createGain();
+  stopVolNode.gain.value = stopVol;
+
+  volumeNode.connect(stopVolNode);
+  stopVolNode.connect(audioContext.destination);
 
   console.log('Loading audio assets...');
   const audioFiles = [
@@ -184,7 +190,7 @@ function renderResumeScreen() {
 
   // --- SCHEDULER (temps local) ---
   const scheduler = new Scheduler(() => audioContext.currentTime, {
-    lookahead: 0.2,
+    lookahead: 1,
   });
 
   let currentStep;
@@ -315,8 +321,10 @@ function renderResumeScreen() {
                 value=${running ? 'play' : 'stop'}
                 @change=${async e => {
                   if (e.detail.value === 'stop') {
+                    stopVolNode.gain.value = 0;
                     stopMetronome();
                   } else {
+                    stopVolNode.gain.value = 1;
                     await startMetronome();
                   }
                 }}

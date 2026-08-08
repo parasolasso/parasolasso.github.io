@@ -3,7 +3,5 @@
   { "title": "Booking", "link": "booking.html" },
   { "title": "Actualité", "link": "actu.html" },
   { "title": "Nous Connaître", "link": "bio.html" },
-  { "title": "Agenda", "link": "agenda.html" },
-  { "title": "" },
-  { "title": "TicTacToes Mini", "link": "tictactoesMini.html" }
+  { "title": "Agenda", "link": "agenda.html" }
 ]
