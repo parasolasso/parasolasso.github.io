@@ -494,6 +494,10 @@ async function main($container) {
       if (!running) await forceAudioContextRenegotiation();
     }
   });
+  
+  const loaderImg = document.getElementById('app-loader');
+  console.log('Loader : ', loaderImg);
+  if (loaderImg) loaderImg.remove();
 
   renderStartScreen();
 }

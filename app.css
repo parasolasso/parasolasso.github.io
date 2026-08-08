@@ -222,5 +222,17 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.tictactoes-app .app-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tictactoes-app .app-loader img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
 
 /*# sourceMappingURL=app.css.map */
