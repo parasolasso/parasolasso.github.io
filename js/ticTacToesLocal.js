@@ -114,6 +114,32 @@ async function main($container) {
     }
   });
 
+  function checkAudioContextHealth() {
+  if (audioContext.state !== 'running') {
+    running = false;
+    if (scheduler.has(processor)) {
+      scheduler.remove(processor);
+    }
+    renderResumeScreen();
+  }
+}
+
+function renderResumeScreen() {
+  render(html`
+    <div class="start-layout">
+      <button
+        class="start-button"
+        @click=${async () => {
+          await unlockAudioContext();
+          renderApp();
+        }}
+      >
+        Reprendre le métronome
+      </button>
+    </div>
+  `, $container);
+}
+
   // --- ETAT LOCAL (remplace les shared states soundworks) ---
   let BPM = 120;
   let bar = 4;
@@ -226,8 +252,10 @@ async function main($container) {
     return currentTime + stepTimeSec;
   }
 
-  function startMetronome() {
-
+  async function startMetronome() {
+    if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
     currentStep = 0;
     running = true;
     const startTime = audioContext.currentTime + 0.1;
@@ -289,7 +317,7 @@ async function main($container) {
                   if (e.detail.value === 'stop') {
                     stopMetronome();
                   } else {
-                    startMetronome();
+                    await startMetronome();
                   }
                 }}
               ></sc-transport>
@@ -420,6 +448,18 @@ async function main($container) {
       </div>
     `, $container);
   }
+
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      checkAudioContextHealth();
+    }
+  });
+
+  window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      checkAudioContextHealth();
+    }
+  });
 
   renderStartScreen();
 }
