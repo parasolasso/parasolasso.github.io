@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-10",
+  "title": "Nouveau Single Disponible!",
+  "summary": "Le titre Ce Matin, premier single de TLMD. à écouter partout!",
+  "text": [
+    "Enregistré en début d'année, le titre Ce Matin sort enfin sur toutes les plateformes de streaming.",
+    "Le morceaux aux ambiances multiple s'annonce comme un introduction à l'année prolifique pour le groupe et son audience.",
+    "Enregistré au studio Le Batiskaf - Nantes",
+    "Mixage : Léonard Mule - Mastering : Phase Mastering"
+
+  ],
+  "isOnMain": true,
+  "isEvent": true,
+  "venue": false,
+  "ticketLink": false,
+  "buttons": [
+    { "label": "Écouter sur Spotify", "link": "https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Écouter sur Deezer", "link": "https://www.deezer.com/fr/artist/405527272", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Écouter sur Apple Music", "link": "https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "Écouter sur SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+  ]
+}

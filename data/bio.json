@@ -5,7 +5,7 @@
       { "type": "text", "content": "TOUT LE MONDE DÉTESTE (TLMD.) est un groupe de rock alernatif, pop. On raconte les fables modernes d’une jeunesse à la fois politisée et consumériste, aussi ouverte à l’autre qu’enfermée dans ses propres stéréotypes." },
       {
         "type": "image",
-        "src": "images/DSC03711.jpeg",
+        "src": "images/DSC03711.webp",
         "alt": "Séance en studio"
       },
       { "type": "text", "content": "À travers des textes tour à tour poétiques ou crus, et ses passages instrumentaux, TLMD chante les relations, le travail, l’absurdité, les angoisses et les corps." }
@@ -16,19 +16,19 @@
     "blocks": [
         {
           "type": "image",
-          "src": "images/pierre.jpg",
+          "src": "images/pierre.webp",
           "alt": "Pierre"
         },
         { "type": "text", "content": "<strong>Pierre</strong> • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations des profondeurs du réel. Sur scène il est le batteur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
         {
           "type": "image",
-          "src": "images/tim.jpg",
+          "src": "images/tim.webp",
           "alt": "Timothée"
         },
         { "type": "text", "content": "<strong>Timothée</strong> •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
         {
             "type": "image",
-            "src": "images/arthus.jpeg",
+            "src": "images/arthus.webp",
             "alt": "Arthus"
         },
         { "type": "text", "content": "<strong>Arthus</strong> • Chanteur, Guitariste & Développeur audio, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poignée de titres du groupe. " }
@@ -41,7 +41,7 @@
       { "type": "text", "content": "Le groupe multiplie les scènes et les collaborations, avec une identité visuelle et sonore de plus en plus affirmée." },
       {
         "type": "image",
-        "src": "images/2026-10-01.png",
+        "src": "images/2026-10-01.webp",
         "alt": "TLMD."
       }
     ]

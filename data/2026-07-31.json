@@ -6,7 +6,7 @@
     "TLMD. se déploie maintenant sur de nombreuses plateformes de stream, Spotify, Deezer, Apple Music, Soundcloud et d'autres."
 
   ],
-  "isOnMain": true,
+  "isOnMain": false,
   "isEvent": true,
   "venue": false,
   "ticketLink": false,
