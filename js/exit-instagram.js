@@ -1,13 +1,11 @@
-(function () {
-  const ua = navigator.userAgent || '';
-  if (!/Instagram/i.test(ua)) return;
+function openYoutubeFromWebview(youtubeUrl) {
+  const handle = youtubeUrl.match(/@([^/?]+)/)?.[1];
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  const current = window.location.href;
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const deepLink = isIOS
+    ? `youtube://www.youtube.com/@${handle}`
+    : `intent://www.youtube.com/@${handle}#Intent;package=com.google.android.youtube;scheme=https;S.browser_fallback_url=${encodeURIComponent(youtubeUrl)};end`;
 
-  const target = isIOS
-    ? current.replace(/^https:\/\//, 'x-safari-https://')
-    : `intent://${current.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
-
-  window.location.href = target;
-})();
+  window.location.href = deepLink;
+  setTimeout(() => { window.location.href = youtubeUrl; }, 1500);
+}

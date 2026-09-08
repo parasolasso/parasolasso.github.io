@@ -84,13 +84,18 @@ async function renderSocialButtons() {
   const buttons = data.socialsButtons || [];
   if (!buttons.length) return;
 
-  container.innerHTML = buttons.map((b, i) => `
-    <a class="btn" href="${b.link}" target="_blank" rel="noopener"
+  container.innerHTML = buttons.map((b) => {
+  const isYoutube = b.label.toLowerCase() === 'youtube';
+  const clickAttr = isYoutube
+    ? `onclick="openYoutubeFromWebview('${b.link}'); return false;"`
+    : '';
+  return `
+    <a class="btn" href="${b.link}" target="_blank" rel="noopener" ${clickAttr}
        data-goatcounter-click="${b.label.toLowerCase().replace(/\s+/g, '-')}" data-goatcounter-title="${b.label}">
       <img src="${b.logo}" alt="">
       ${b.label}
-    </a>
-  `).join('');
+    </a>`;
+}).join('');
 
   if (window.goatcounter) window.goatcounter.bind_events();
 }
