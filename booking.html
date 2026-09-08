@@ -37,46 +37,11 @@
         </div>
 
       <p class="section">ÉCOUTER EN STREAMING.</p>
-      <div class="buttons">
-        
-        <a class="btn" href="https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs?si=sB4OaypyQ7WTBLT2g9We0A" target="_blank" rel="noopener" data-goatcounter-click="spotify" data-goatcounter-title="Spotify">
-          <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
-          Spotify
-        </a>
-        
-        <a class="btn" href="https://www.deezer.com/fr/artist/405527272" target="_blank" rel="noopener" data-goatcounter-click="deezer" data-goatcounter-title="Deezer">
-          <img src="https://cdn.simpleicons.org/deezer/A238FF" alt="">
-          Deezer
-        </a>
-        
-        <a class="btn" href="https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778" target="_blank" rel="noopener" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music">
-          <img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="">
-          Apple Music
-        </a>
-        <a class="btn" href="https://soundcloud.com/toutlemondedeteste" target="_blank" rel="noopener" data-goatcounter-click="soundcloud" data-goatcounter-title="SoundCloud">
-          <img src="https://cdn.simpleicons.org/soundcloud/FF5500" alt="">
-          SoundCloud
-        </a>
-      </div>
+      <div class="buttons" id="listen-buttons"></div>
 
 
       <p class="section">RÉSEAUX SOCIAUX.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.instagram.com/tlmd.fr/" target="_blank" rel="noopener" data-goatcounter-click="instagram" data-goatcounter-title="Instagram">
-          <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="">
-          Instagram
-        </a>
-
-        <a class="btn" href="https://www.facebook.com/people/Tout-Le-Monde-D%C3%A9teste/61591787564886/" target="_blank" rel="noopener" data-goatcounter-click="facebook" data-goatcounter-title="Facebook">
-          <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="">
-          Facebook
-        </a>
-        
-        <a class="btn" href="https://www.youtube.com/@toutlemondedeteste" target="_blank" rel="noopener" data-goatcounter-click="youtube" data-goatcounter-title="youtube">
-          <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="">
-          youtube
-        </a>
-      </div>
+      <div class="buttons" id="social-buttons"></div> 
 
       <div class="divider"></div>
     </main>
@@ -102,6 +67,8 @@
     <div id="site-footer"></div>
 
     <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
+    <script src="js/links.js"></script>
+    <script>renderHotBlock(); renderListenButtons();renderSocialButtons();</script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     

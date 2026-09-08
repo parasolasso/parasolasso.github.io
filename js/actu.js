@@ -92,7 +92,7 @@ async function renderActuList() {
       ${a.buttons && a.buttons.length ? `
         <div class="buttons">
           ${a.buttons.map((b, i) => `
-          <a class="btn" href="${b.link}" target="_blank" rel="noopener" data-goatcounter-click="actu-btn-${a.date}-${i}" data-goatcounter-title="${b.label} - ${a.title}">
+          <a class="btn" href="${b.link}" rel="noopener" data-goatcounter-click="actu-btn-${a.date}-${i}" data-goatcounter-title="${b.label} - ${a.title}">
             <img src="${b.logo}" alt="">
             ${b.label}
           </a>`).join('')}
@@ -140,7 +140,7 @@ async function renderAgenda() {
         En savoir plus
       </a>
       ${!e.ticketLink || e.ticketLink === '#' ? '' : `
-      <a class="event-link" href="${e.ticketLink}" target="_blank" rel="noopener" data-goatcounter-click="agenda-event-${i}" data-goatcounter-title="Billets - ${e.title}">
+      <a class="event-link" href="${e.ticketLink}" rel="noopener" data-goatcounter-click="agenda-event-${i}" data-goatcounter-title="Billets - ${e.title}">
         Billets
       </a>`}
     </div>
