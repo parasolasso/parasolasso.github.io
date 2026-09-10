@@ -1,11 +1,12 @@
 {
-  "hotTitle": "Burn-Out LIVE",
-  "player_link": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/toutlemondedeteste/burn-out-live-2025-2&color=%23333333&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true",
+  "hotTitle": "Ce Matin",
+  "player_embeded" : "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2390294466&color=%235a5a5a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+  "player_link": "https://soundcloud.com/toutlemondedeteste/ce-matin",
   "listenButtons": [
-    { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/track/3fybxiTFwFL22Najo7OHOp?si=f305a795780b499d", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
-    { "label": "Deezer", "link": "https://link.deezer.com/s/341kwa2bpGUwpz2CGitbh", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
-    { "label": "Apple Music", "link": "https://music.apple.com/fr/album/burn-out-single/6793886777", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
-    { "label": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste/burn-out-live-2025-2?si=def6fdbd969c4e83b3d092a67271478b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+    { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/track/5LuRm8tLMJRAYifml47Cnx?si=fc9394d2b5084612", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Deezer", "link": "https://link.deezer.com/s/34mn1Zd9Gj5QtI5Vk91vw", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Apple Music", "link": "https://music.apple.com/fr/song/ce-matin/6806613149", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste/ce-matin", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
   ],
   "socialsButtons": [
     { "label": "Instagram", "link": "https://www.instagram.com/tlmd.fr/", "logo": "https://cdn.simpleicons.org/instagram/E4405F" },

@@ -28,9 +28,11 @@ async function renderHotBlock() {
     placeholder.addEventListener('click', () => {
       const wrapper = placeholder.parentElement;
       wrapper.innerHTML = `
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-          src="${data.player_link}">
-        </iframe>
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" 
+        src=${data.player_embeded}></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+        <a href="https://soundcloud.com/toutlemondedeteste" title="TOUT LE MONDE DÉTESTE." target="_blank" style="color: #cccccc; text-decoration: none;">TOUT LE MONDE DÉTESTE.</a> · 
+        <a href=${data.player_link} 
+        title=${data.hotTitle} target="_blank" style="color: #cccccc; text-decoration: none;">${data.hotTitle}</a></div>
       `;
       if (window.goatcounter) window.goatcounter.bind_events();
     });
