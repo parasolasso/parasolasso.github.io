@@ -39,7 +39,7 @@ async function main($container) {
   // --- SERVICE WORKER (fonctionnement hors-ligne) ---
   if ('serviceWorker' in navigator) {
     try {
-      await navigator.serviceWorker.register('/sw.js');
+      await navigator.serviceWorker.register('/sw.js', { scope: '/tictactoesMini.html' });
       console.log('Service Worker Registered');
     } catch (err) {
       console.warn('Fail to register Service Worker :', err.message);
