@@ -92,7 +92,7 @@ async function renderActuList() {
       ${a.buttons && a.buttons.length ? `
         <div class="buttons">
           ${a.buttons.map((b, i) => `
-          <a class="btn" href="${b.link}" rel="noopener" data-goatcounter-click="actu-btn-${a.date}-${i}" data-goatcounter-title="${b.label} - ${a.title}">
+          <a class="btn" href="${b.link}" rel="noopener" target="_blank" data-goatcounter-click="actu-btn-${a.date}-${i}" data-goatcounter-title="${b.label} - ${a.title}">
             <img src="${b.logo}" alt="">
             ${b.label}
           </a>`).join('')}
