@@ -6,6 +6,7 @@
     { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/track/5LuRm8tLMJRAYifml47Cnx?si=fc9394d2b5084612", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
     { "label": "Deezer", "link": "https://link.deezer.com/s/34mn1Zd9Gj5QtI5Vk91vw", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
     { "label": "Apple Music", "link": "https://music.apple.com/fr/song/ce-matin/6806613149", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "Youtube Music", "link": "https://music.youtube.com/watch?v=-2pIYEc9ab0&si=K7xAcer01izO1yuX", "logo": "https://cdn.simpleicons.org/youtube/FF0000" },
     { "label": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste/ce-matin", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
   ],
   "socialsButtons": [
