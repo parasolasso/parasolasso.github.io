@@ -14,9 +14,9 @@
   "venue": false,
   "ticketLink": false,
   "buttons": [
-    { "label": "Écouter sur Spotify", "link": "https://open.spotify.com/intl-fr/artist/4VeafSfaFqFGjlqoDImMMs", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
-    { "label": "Écouter sur Deezer", "link": "https://www.deezer.com/fr/artist/405527272", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
-    { "label": "Écouter sur Apple Music", "link": "https://music.apple.com/fr/artist/tout-le-monde-d%C3%A9teste/6793886778", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
-    { "label": "Écouter sur SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+    { "label": "Écouter sur Spotify", "link": "https://open.spotify.com/intl-fr/track/5LuRm8tLMJRAYifml47Cnx?si=fc9394d2b5084612", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Écouter sur Deezer", "link": "https://link.deezer.com/s/34mn1Zd9Gj5QtI5Vk91vw", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Écouter sur Apple Music", "link": "https://music.apple.com/fr/song/ce-matin/6806613149", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "Écouter sur SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste/ce-matin", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
   ]
 }
