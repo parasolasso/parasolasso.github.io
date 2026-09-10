@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'tictactoes-mini-v1';
+const CACHE_NAME = 'tictactoes-mini-v2';
  
 // Liste des fichiers indispensables au fonctionnement hors-ligne.
 // Ajuster les chemins si la structure du repo change.
