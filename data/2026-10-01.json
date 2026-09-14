@@ -3,13 +3,13 @@
   "title": "Live à La Mécanique Ondulatoire.",
   "summary": "TLMD. remonte sur scène pour la première fois de l'année avec Bébé Léo en première partie. ",
   "text": [
-    "TOUT LE MONDE DÉTESTE. remonte sur scène avec une setlist inédite. Après la sortie de leur premier single Ce Matin, ils fêtent la rentrée d'une année qui s'annonce bien remplie.",
-    "Bébé Léo assurera une première partie incendiaire. Une rappeuse en liberté à surveiller de près.",
+    "TOUT LE MONDE DÉTESTE. remonte sur scène avec une setlist inédite. Après la sortie de leur premier single Ce Matin, ils fêtent la rentrée d'une année qui s'annonce bien remplie. Rock Alternatif.",
+    "Bébé Léo assurera une première partie incendiaire dans un style punk-rap. Une rappeuse en liberté à surveiller de près.",
     "La Mécanique Ondulatoire • 8 Passage Thiere • 75010 Paris",
     "Billeterie sur place • 7€ "
   ],
   "image": "images/banner-meca.webp",
-  "isOnMain": false,
+  "isOnMain": true,
   "isEvent": true,
   "venue": "La Mécanique Ondulatoire - Paris.",
   "ticketLink": false,
