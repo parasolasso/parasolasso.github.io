@@ -1,13 +1,13 @@
 {
-  "hotTitle": "Ce Matin",
-  "player_embeded" : "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2390294466&color=%235a5a5a&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-  "player_link": "https://soundcloud.com/toutlemondedeteste/ce-matin",
+  "hotTitle": "Méditerranée",
+  "player_embeded" : "https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2420444394&color=%235a5a5a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+  "player_link": "https://soundcloud.com/toutlemondedeteste/mediterranee",
   "listenButtons": [
-    { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/track/5LuRm8tLMJRAYifml47Cnx?si=fc9394d2b5084612", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
-    { "label": "Deezer", "link": "https://link.deezer.com/s/34mn1Zd9Gj5QtI5Vk91vw", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
-    { "label": "Apple Music", "link": "https://music.apple.com/fr/song/ce-matin/6806613149", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
-    { "label": "Youtube Music", "link": "https://music.youtube.com/watch?v=-2pIYEc9ab0&si=K7xAcer01izO1yuX", "logo": "https://cdn.simpleicons.org/youtube/FF0000" },
-    { "label": "SoundCloud", "link": "https://soundcloud.com/toutlemondedeteste/ce-matin", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+    { "label": "Spotify", "link": "https://open.spotify.com/intl-fr/track/4dzildWYqmOaRv5ckgjU9N?si=33c016b097b145be", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Deezer", "link": "https://link.deezer.com/s/34OLRsvvgfS2dsqWZ6316", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Apple Music", "link": "https://music.apple.com/us/album/m%C3%A9diterran%C3%A9e-single/6825699241", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "Youtube Music", "link": "https://youtu.be/KqGJt5ofEHk?si=btr16d46CuaOIgle", "logo": "https://cdn.simpleicons.org/youtube/FF0000" },
+    { "label": "SoundCloud", "link": "https://on.soundcloud.com/NUTUhAZfQ09kMKGdVC", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
   ],
   "socialsButtons": [
     { "label": "Instagram", "link": "https://www.instagram.com/tlmd.fr/", "logo": "https://cdn.simpleicons.org/instagram/E4405F" },

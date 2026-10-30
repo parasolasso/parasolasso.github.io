@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-10",
+  "title": "Nouveau Single Disponible!",
+  "summary": "Le titre Méditerranée. à écouter partout!",
+  "text": [
+    "Enregistré en début d'année, le titre Méditerranée sort enfin sur toutes les plateformes de streaming.",
+    " ",
+    "Enregistré au studio Le Batiskaf - Nantes",
+    "Mixage : Léonard Mule - Mastering : Phase Mastering"
+
+  ],
+  "isOnMain": true,
+  "isEvent": true,
+  "venue": false,
+  "ticketLink": false,
+  "buttons": [
+    { "label": "Écouter sur Spotify", "link": "https://open.spotify.com/intl-fr/track/4dzildWYqmOaRv5ckgjU9N?si=33c016b097b145be", "logo":"https://cdn.simpleicons.org/spotify/1DB954" },
+    { "label": "Écouter sur Deezer", "link": "https://link.deezer.com/s/34OLRsvvgfS2dsqWZ6316", "logo": "https://cdn.simpleicons.org/deezer/A238FF" },
+    { "label": "Écouter sur Apple Music", "link": "https://music.apple.com/us/album/m%C3%A9diterran%C3%A9e-single/6825699241", "logo": "https://cdn.simpleicons.org/applemusic/FA243C" },
+    { "label": "Écouter sur Youtube", "link": "https://youtu.be/KqGJt5ofEHk?si=btr16d46CuaOIgle", "logo": "https://cdn.simpleicons.org/youtube/FF0000" },
+    { "label": "Écouter sur SoundCloud", "link": "https://on.soundcloud.com/NUTUhAZfQ09kMKGdVC", "logo": "https://cdn.simpleicons.org/soundcloud/FF5500" }
+  ]
+}

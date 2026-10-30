@@ -9,7 +9,7 @@
     "Billeterie sur place • 7€ "
   ],
   "image": "images/banner-meca.webp",
-  "isOnMain": true,
+  "isOnMain": false,
   "isEvent": true,
   "venue": "La Mécanique Ondulatoire - Paris.",
   "ticketLink": false,
