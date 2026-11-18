@@ -4,6 +4,16 @@ async function loadBio() {
   return res.json();
 }
 
+// Secours : mesure une image si ses dimensions manquent dans le JSON
+function getImageSize(src) {
+  return new Promise(resolve => {
+    const probe = new Image();
+    probe.onload = () => resolve({ width: probe.naturalWidth, height: probe.naturalHeight });
+    probe.onerror = () => resolve(null);
+    probe.src = src;
+  });
+}
+
 function ensureLightbox() {
   let overlay = document.getElementById('bio-lightbox');
   if (overlay) return overlay;
@@ -24,71 +34,80 @@ function ensureLightbox() {
   return overlay;
 }
 
+function renderImage(block, size) {
+  const isPortrait = size && size.height > size.width;
+  const dims = size ? ` width="${size.width}" height="${size.height}"` : '';
+  return `
+    <div class="bio-image ${isPortrait ? 'bio-portrait' : 'bio-landscape'}">
+      <img src="${block.src}" alt="${block.alt || ''}"${dims} decoding="async">
+      ${block.caption ? `<p class="bio-caption">${block.caption}</p>` : ''}
+    </div>`;
+}
+
 async function renderBio() {
-  const sections = await loadBio();
   const container = document.getElementById('bio_content');
   if (!container) return;
+  const sections = await loadBio();
 
-  container.innerHTML = sections.map(section => `
-    <section class="bio-section">
-      <h2 class="bio-title">${section.title}</h2>
-      ${section.blocks.map(block => {
-        if (block.type === 'text') {
-          return `<p class="bio-text">${block.content}</p>`;
-        }
-        if (block.type === 'image') {
-          return `
-            <div class="bio-image">
-              <img src="${block.src}" alt="${block.alt || ''}">
-              ${block.caption ? `<p class="bio-caption">${block.caption}</p>` : ''}
-            </div>
-          `;
-        }
-        return '';
-      }).join('')}
-    </section>
-  `).join('');
+  // 1. Dimensions : depuis le JSON, sinon mesurées (en parallèle)
+  const imageBlocks = sections.flatMap(s => s.blocks.filter(b => b.type === 'image'));
+  await Promise.all(imageBlocks.map(async block => {
+    block._size = (block.width && block.height)
+      ? { width: block.width, height: block.height }
+      : await getImageSize(block.src);
+  }));
 
-  // Détection automatique de l'orientation de chaque image, une fois chargée.
-  // Si l'image est en portrait, on la regroupe avec le paragraphe qui la suit
-  // directement pour l'afficher à côté (la légende, elle, reste sous la photo).
+  // 2. HTML final construit en une seule passe
   let portraitIndex = 0;
+  container.innerHTML = sections.map(section => {
+    const blocks = section.blocks;
+    let html = '';
 
-  container.querySelectorAll('.bio-image').forEach(wrapper => {
-    const img = wrapper.querySelector('img');
+    for (let i = 0; i < blocks.length; i++) {
+      const block = blocks[i];
 
-    const finalize = () => {
-      const isPortrait = img.naturalHeight > img.naturalWidth;
-      wrapper.classList.add(isPortrait ? 'bio-portrait' : 'bio-landscape');
+      if (block.type === 'text') {
+        html += `<p class="bio-text">${block.content}</p>`;
+        continue;
+      }
 
-      if (isPortrait) {
-        const next = wrapper.nextElementSibling;
-        if (next && next.classList.contains('bio-text')) {
-          const row = document.createElement('div');
-          row.className = 'bio-portrait-row' + (portraitIndex % 2 === 1 ? ' bio-row-reverse' : '');
-          wrapper.parentNode.insertBefore(row, wrapper);
-          row.appendChild(wrapper);
-          row.appendChild(next);
+      if (block.type === 'image') {
+        const size = block._size;
+        const isPortrait = size && size.height > size.width;
+        const next = blocks[i + 1];
+
+        if (isPortrait && next && next.type === 'text') {
+          const reverse = portraitIndex % 2 === 1 ? ' bio-row-reverse' : '';
+          html += `
+            <div class="bio-portrait-row${reverse}">
+              ${renderImage(block, size)}
+              <p class="bio-text">${next.content}</p>
+            </div>`;
           portraitIndex++;
+          i++; // le paragraphe suivant est déjà placé
+        } else {
+          html += renderImage(block, size);
         }
       }
-    };
-
-    if (img.complete && img.naturalWidth) {
-      finalize();
-    } else {
-      img.addEventListener('load', finalize);
     }
 
-  });
-  container.querySelectorAll('.bio-image img').forEach(img => {
-  img.addEventListener('click', () => {
+    return `
+      <section class="bio-section">
+        <h2 class="bio-title">${section.title}</h2>
+        ${html}
+      </section>`;
+  }).join('');
+
+  container.classList.add('ready');
+
+  // 3. Lightbox : un seul écouteur pour toutes les images
+  container.addEventListener('click', (e) => {
+    const img = e.target.closest('.bio-image img');
+    if (!img) return;
     const overlay = ensureLightbox();
     const lightboxImg = document.getElementById('bio-lightbox-img');
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
     overlay.classList.add('open');
   });
-});
 }
-

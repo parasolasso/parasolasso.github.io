@@ -772,6 +772,16 @@ footer {
   padding: 0 24px;
   text-align: left;
 }
+
+/* Apparition en fondu une fois la mise en page prête */
+#bio_content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#bio_content.ready {
+  opacity: 1;
+}
  
 .bio-title {
   font-family: 'Montserrat', sans-serif;

@@ -6,7 +6,9 @@
       {
         "type": "image",
         "src": "images/DSC03711.webp",
-        "alt": "Séance en studio"
+        "alt": "Séance en studio",
+        "width": 2000,
+        "height": 3001
       },
       { "type": "text", "content": "À travers des textes tour à tour poétiques ou crus, et ses passages instrumentaux, TLMD chante les relations, le travail, l’absurdité, les angoisses et les corps." }
     ]
@@ -14,24 +16,30 @@
   {
     "title": "Le Groupe",
     "blocks": [
-        {
-          "type": "image",
-          "src": "images/pierre.webp",
-          "alt": "Pierre"
-        },
-        { "type": "text", "content": "<strong>Pierre</strong> • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations des profondeurs du réel. Sur scène il est le batteur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
-        {
-          "type": "image",
-          "src": "images/tim.webp",
-          "alt": "Timothée"
-        },
-        { "type": "text", "content": "<strong>Timothée</strong> •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
-        {
-            "type": "image",
-            "src": "images/arthus.webp",
-            "alt": "Arthus"
-        },
-        { "type": "text", "content": "<strong>Arthus</strong> • Chanteur, Guitariste & Développeur audio, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poignée de titres du groupe. " }
+      {
+        "type": "image",
+        "src": "images/pierre.webp",
+        "alt": "Pierre",
+        "width": 2000,
+        "height": 3000
+      },
+      { "type": "text", "content": "<strong>Pierre</strong> • Poète, batteur, guitariste et apiculteur, Pierre tire ses inspirations des profondeurs du réel. Sur scène il est le batteur du groupe, mais aussi parolier de la plupart des oeuvres de TLMD. " },
+      {
+        "type": "image",
+        "src": "images/tim.webp",
+        "alt": "Timothée",
+        "width": 2000,
+        "height": 2892
+      },
+      { "type": "text", "content": "<strong>Timothée</strong> •  trombonniste de jazz, guitariste et chercheur en philosophie, Timothée apporte autant de rigueur que de rêverie dans les composition collectives du groupe. Il explore les sonorités électroniques avec son synthétiseur et son oreille cultivée. " },
+      {
+        "type": "image",
+        "src": "images/arthus.webp",
+        "alt": "Arthus",
+        "width": 2000,
+        "height": 3000
+      },
+      { "type": "text", "content": "<strong>Arthus</strong> • Chanteur, Guitariste & Développeur audio, Arthus décortique la physique du son pour mettre en onde le projet. Il écrit les paroles d'une poignée de titres du groupe. " }
     ]
   },
   {
@@ -42,8 +50,10 @@
       {
         "type": "image",
         "src": "images/2026-10-01.webp",
-        "alt": "TLMD."
+        "alt": "TLMD.",
+        "width": 1492,
+        "height": 610
       }
     ]
-  } 
+  }
 ]
