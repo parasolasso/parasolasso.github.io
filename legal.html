@@ -20,7 +20,7 @@
       <p><strong>Éditeur du site</strong><br>
         Parasol Association<br>
         Paris 17<br>
-        Contact : parasol.wav@gmail.com</p>
+        Contact : <a class="obf-mail" data-u="vaw.losarap" data-d="moc.liamg" href="#">[activez JavaScript pour voir l'adresse]</a></p>
 
       <p><strong>Hébergeur</strong><br>
         GitHub, Inc.<br>
@@ -52,6 +52,14 @@
   <script src="js/actu.js"></script>
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
+  <script>
+    document.querySelectorAll(".obf-mail").forEach(function (a) {
+      var rev = function (s) { return s.split("").reverse().join(""); };
+      var m = rev(a.dataset.u) + "@" + rev(a.dataset.d);
+      a.href = "mailto:" + m;
+      a.textContent = m;
+    });
+  </script>
 
   <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
