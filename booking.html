@@ -52,7 +52,7 @@
         <button class="modal-close" onclick="document.getElementById('contact-modal').classList.remove('open')">×</button>
         <h2>CONTACT</h2>
         <p>Pour toute demande professionnelle (booking, presse, facture), contactez :<br>
-        <a href="mailto:contact@tlmd.fr" style="color:rgba(255,255,255,0.5);">contact@tlmd.fr</a></p>
+        <a class="contact-mail" href="#" style="color:rgba(255,255,255,0.5);">[activez JavaScript pour voir l'adresse]</a></p>
       </div>
     </div>
 
@@ -66,11 +66,22 @@
 
     <div id="site-footer"></div>
 
-    <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
+        <!-- SCRIPTS — toujours en fin de body, pour que le DOM soit complet avant leur exécution -->
     <script src="js/links.js"></script>
     <script>renderHotBlock(); renderListenButtons();renderSocialButtons();</script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+      document.querySelectorAll(".contact-mail").forEach(function (a) {
+        var m = contactMail();
+        a.href = "mailto:" + m;
+        a.textContent = m;
+      });
+    </script>
+
+    <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    
     
     <script data-goatcounter="https://tlmd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>

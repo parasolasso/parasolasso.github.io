@@ -1,3 +1,8 @@
+function contactMail() {
+  var p = ["rf.dmlt", "tcatnoc"];
+  return p[1].split("").reverse().join("") + "@" + p[0].split("").reverse().join("");
+}
+
 fetch('footer.html')
   .then(res => res.text())
   .then(html => {
@@ -20,9 +25,10 @@ async function renderFooterLinks() {
   }
 
   container.innerHTML = items.map((item, i) => {
-    const isMailto = item.link.startsWith('mailto:');
+    const link = item.link === '#contact-mail' ? 'mailto:' + contactMail() : item.link;
+    const isMailto = link.startsWith('mailto:');
     return `
-      <a class="footer-icon" href="${item.link}" ${isMailto ? '' : 'target="_blank" rel="noopener"'}
+      <a class="footer-icon" href="${link}" ${isMailto ? '' : 'target="_blank" rel="noopener"'}
          data-goatcounter-click="footer-${i}" data-goatcounter-title="${item.alt}">
         <img src="${item.logo}" alt="${item.alt}">
       </a>
